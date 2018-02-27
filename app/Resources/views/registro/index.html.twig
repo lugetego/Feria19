@@ -1,0 +1,709 @@
+{% extends 'base.html.twig' %}
+
+{% block nav %}
+    <li class="active"><a href="#">Registros</a></li>
+    <li><a data-toggle="modal" data-target="#correos">Correos</a></li>
+{% endblock %}
+
+{% block navr %}
+    <li class="active"><a href="{{ path('logout') }}">Logout<span class="sr-only">(current)</span></a></li>
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set braillexm = (totalm.braille*100)/5 %}
+                            {% set braillexv = (totalv.braille*100)/5 %}
+                            <strong>Braille</strong><br> <small>M: {{ totalm.braille }} de 5</small>
+                            <div class="progress progress-mini">
+                                {% if  braillexm > 0 and braillexm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ braillexm }}%"></div>
+                                {% elseif braillexm > 33.33 and braillexm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ braillexm }}%"></div>
+                                {% elseif braillexm > 66.66  and braillexm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ braillexm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br> V: {{ totalv.braille }} de 5</small>
+                            <div class="progress progress-mini">
+                                {% if  braillexv > 0 and braillexv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ braillexv }}%"></div>
+                                {% elseif braillexm > 33.33 and braillexm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ braillexv }}%"></div>
+                                {% elseif braillexm > 66.66  and braillexm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ braillexv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set burbujasxm = (totalm.burbujas*100)/6 %}
+                            {% set burbujasxv = (totalv.burbujas*100)/6 %}
+                            <strong>Burbujas</strong><br> <small>M: {{ totalm.burbujas }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if  burbujasxm > 0 and burbujasxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ burbujasxm }}%"></div>
+                                {% elseif burbujasxm > 33.33 and burbujasxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ burbujasxm }}%"></div>
+                                {% elseif burbujasxm > 66.66  and burbujasxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ burbujasxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.burbujas }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if  burbujasxv > 0 and burbujasxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ burbujasxv }}%"></div>
+                                {% elseif burbujasxv > 33.33 and burbujasxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ burbujasxv }}%"></div>
+                                {% elseif burbujasxv > 66.66  and burbujasxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ burbujasxv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set canguroxm = (totalm.canguro*100)/5 %}
+                            {% set canguroxv = (totalv.canguro*100)/5 %}
+                            <strong>Canguro</strong><br><small>M: {{ totalm.canguro }} de 5</small>
+                            <div class="progress progress-mini">
+                                {% if  canguroxm > 0 and canguroxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ canguroxm }}%"></div>
+                                {% elseif canguroxm > 33.33 and canguroxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ canguroxm }}%"></div>
+                                {% elseif canguroxm > 66.66  and canguroxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ canguroxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.canguro }} de 5</small>
+                            <div class="progress progress-mini">
+                                {% if  canguroxv > 0 and canguroxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ canguroxv }}%"></div>
+                                {% elseif canguroxv > 33.33 and canguroxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ canguroxv }}%"></div>
+                                {% elseif canguroxv > 66.66  and canguroxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ canguroxv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set clubxm = (totalm.club*100)/5 %}
+                            {% set clubxv = (totalv.club*100)/5 %}
+                            <strong>Club</strong><br><small>M: {{ totalm.club }} de 5</small>
+                            <div class="progress progress-mini">
+                                {% if  clubxm > 0 and clubxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ clubxm }}%"></div>
+                                {% elseif clubxm > 33.33 and clubxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ clubxm }}%"></div>
+                                {% elseif clubxm > 66.66  and clubxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ clubxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.club }} de 5</small>
+                            <div class="progress progress-mini">
+                                {% if  clubxv > 0 and clubxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ clubxv }}%"></div>
+                                {% elseif clubxv > 33.33 and clubxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ clubxv }}%"></div>
+                                {% elseif clubxv > 66.66  and clubxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ clubxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set dimensionesxm = (totalm.dimensiones*100)/4 %}
+                            {% set dimensionesxv = (totalv.dimensiones*100)/4 %}
+                            <strong>Dimensiones</strong><br><small>M: {{ totalm.dimensiones }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if  dimensionesxm > 0 and dimensionesxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ dimensionesxm }}%"></div>
+                                {% elseif dimensionesxm > 33.33 and dimensionesxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ dimensionesxm }}%"></div>
+                                {% elseif dimensionesxm > 66.66  and dimensionesxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ dimensionesxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.dimensiones }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if dimensionesxv > 0 and dimensionesxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ dimensionesxv }}%"></div>
+                                {% elseif dimensionesxv > 33.33 and dimensionesxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ dimensionesxv }}%"></div>
+                                {% elseif dimensionesxv > 66.66  and dimensionesxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ dimensionesxv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set divulgamatxm = (totalm.divulgamat*100)/4 %}
+                            {% set divulgamatxv = (totalv.divulgamat*100)/4 %}
+                            <strong>Divulgamat</strong><br><small>M: {{ totalm.divulgamat }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if divulgamatxm > 0 and divulgamatxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ divulgamatxm }}%"></div>
+                                {% elseif divulgamatxm > 33.33 and divulgamatxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ divulgamatxm }}%"></div>
+                                {% elseif divulgamatxm > 66.66  and divulgamatxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ divulgamatxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.divulgamat }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if divulgamatxv > 0 and divulgamatxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ divulgamatxv }}%"></div>
+                                {% elseif divulgamatxv > 33.33 and divulgamatxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ divulgamatxv }}%"></div>
+                                {% elseif divulgamatxv > 66.66  and divulgamatxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ divulgamatxv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set expoxm = (totalm.expo*100)/4 %}
+                            {% set expoxv = (totalv.expo*100)/4 %}
+                            <strong>Expo</strong><br><small>M: {{ totalm.expo }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if expoxm > 0 and expoxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ expoxm }}%"></div>
+                                {% elseif expoxm > 33.33 and expoxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ expoxm }}%"></div>
+                                {% elseif expoxm > 66.66  and expoxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ expoxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.expo }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if expoxv > 0 and expoxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ expoxv }}%"></div>
+                                {% elseif expoxv > 33.33 and expoxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ expoxv }}%"></div>
+                                {% elseif expoxv > 66.66  and expoxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ expoxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set gatoxm = (totalm.gato*100)/4 %}
+                            {% set gatoxv = (totalv.gato*100)/4 %}
+                            <strong>Gato</strong><br><small>M: {{ totalm.gato }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if gatoxm > 0 and gatoxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ gatoxm }}%"></div>
+                                {% elseif gatoxm > 33.33 and gatoxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ gatoxm }}%"></div>
+                                {% elseif gatoxm > 66.66  and gatoxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ gatoxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.gato }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if gatoxv > 0 and gatoxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ gatoxv }}%"></div>
+                                {% elseif gatoxv > 33.33 and gatoxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ gatoxv }}%"></div>
+                                {% elseif gatoxv > 66.66  and gatoxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ gatoxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set geografiaxm = (totalm.geografia*100)/4 %}
+                            {% set geografiaxv = (totalv.geografia*100)/4 %}
+                            <strong>Geografía</strong><br><small>M: {{ totalm.geografia }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if geografiaxm > 0 and geografiaxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ geografiaxm }}%"></div>
+                                {% elseif geografiaxm > 33.33 and geografiaxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ geografiaxm }}%"></div>
+                                {% elseif geografiaxm > 66.66  and geografiaxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ geografiaxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.geografia }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if geografiaxv > 0 and geografiaxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ geografiaxv }}%"></div>
+                                {% elseif geografiaxv > 33.33 and geografiaxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ geografiaxv }}%"></div>
+                                {% elseif geografiaxv > 66.66  and geografiaxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ geografiaxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set teatromaticoxm = (totalm.teatromatico*100)/2 %}
+                            {% set teatromaticoxv = (totalv.teatromatico*100)/2 %}
+                            <strong>Teatromático</strong><br><small>M: {{ totalm.teatromatico }} de 2</small>
+                            <div class="progress progress-mini">
+                                {% if teatromaticoxm > 0 and teatromaticoxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ teatromaticoxm }}%"></div>
+                                {% elseif teatromaticoxm > 33.33 and teatromaticoxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ teatromaticoxm }}%"></div>
+                                {% elseif teatromaticoxm > 66.66  and teatromaticoxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ teatromaticoxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.teatromatico }} de 2</small>
+                            <div class="progress progress-mini">
+                                {% if teatromaticoxv > 0 and teatromaticoxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ teatromaticoxv }}%"></div>
+                                {% elseif teatromaticoxv > 33.33 and teatromaticoxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ teatromaticoxv }}%"></div>
+                                {% elseif teatromaticoxv > 66.66  and teatromaticoxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ teatromaticoxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set museoxm = (totalm.museo*100)/4 %}
+                            {% set museoxv = (totalv.museo*100)/4 %}
+                            <strong>Museo</strong><br><small>M: {{ totalm.museo }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if museoxm > 0 and museoxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ museoxm }}%"></div>
+                                {% elseif museoxm > 33.33 and museoxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ museoxm }}%"></div>
+                                {% elseif museoxm > 66.66  and museoxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ museoxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.museo }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if museoxv > 0 and museoxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ museoxv }}%"></div>
+                                {% elseif museoxv > 33.33 and museoxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ museoxv }}%"></div>
+                                {% elseif museoxv > 66.66  and museoxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ museoxv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set mosaicosxm = (totalm.mosaicos*100)/6 %}
+                            {% set mosaicosxv = (totalv.mosaicos*100)/6 %}
+                            <strong>Penrose</strong><br><small>M: {{ totalm.mosaicos }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if mosaicosxm > 0 and mosaicosxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ mosaicosxm }}%"></div>
+                                {% elseif mosaicosxm > 33.33 and mosaicosxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ mosaicosxm }}%"></div>
+                                {% elseif mosaicosxm > 66.66  and mosaicosxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ mosaicosxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.mosaicos }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if mosaicosxv > 0 and mosaicosxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ mosaicosxv }}%"></div>
+                                {% elseif mosaicosxv > 33.33 and mosaicosxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ mosaicosxv }}%"></div>
+                                {% elseif mosaicosxv > 66.66  and mosaicosxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ mosaicosxv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set pescaxm = (totalm.pesca*100)/6 %}
+                            {% set pescaxv = (totalv.pesca*100)/6 %}
+                            <strong>Pesca</strong><br><small>M: {{ totalm.pesca }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if pescaxm > 0 and pescaxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ pescaxm }}%"></div>
+                                {% elseif pescaxm > 33.33 and pescaxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ pescaxm }}%"></div>
+                                {% elseif pescaxm > 66.66  and pescaxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ pescaxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.pesca }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if pescaxv > 0 and pescaxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ pescaxv }}%"></div>
+                                {% elseif pescaxv > 33.33 and pescaxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ pescaxv }}%"></div>
+                                {% elseif pescaxv > 66.66  and pescaxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ pescaxv }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set rompecabezasxm = (totalm.rompecabezas*100)/4 %}
+                            {% set rompecabezasxv = (totalv.rompecabezas*100)/4 %}
+                            <strong>Rompecabezas</strong><br><small>M: {{ totalm.rompecabezas }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if rompecabezasxm > 0 and rompecabezasxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ rompecabezasxm }}%"></div>
+                                {% elseif rompecabezasxm > 33.33 and rompecabezasxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ rompecabezasxm }}%"></div>
+                                {% elseif rompecabezasxm > 66.66  and rompecabezasxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ rompecabezasxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.rompecabezas }} de 4</small>
+                            <div class="progress progress-mini">
+                                {% if rompecabezasxv > 0 and rompecabezasxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ rompecabezasxv }}%"></div>
+                                {% elseif pescaxv > 33.33 and rompecabezasxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ rompecabezasxv }}%"></div>
+                                {% elseif pescaxv > 66.66  and rompecabezasxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ rompecabezasxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set topologiaxm = (totalm.topologia*100)/6 %}
+                            {% set topologiaxv = (totalv.topologia*100)/6 %}
+                            <strong>Topología</strong><br><small>M: {{ totalm.topologia }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if topologiaxm > 0 and topologiaxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ topologiaxm }}%"></div>
+                                {% elseif topologiaxm > 33.33 and topologiaxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ topologiaxm }}%"></div>
+                                {% elseif topologiaxm > 66.66  and topologiaxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ topologiaxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.topologia }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if topologiaxv > 0 and topologiaxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ topologiaxv }}%"></div>
+                                {% elseif topologiaxv > 33.33 and topologiaxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ topologiaxv }}%"></div>
+                                {% elseif topologiaxv > 66.66  and topologiaxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ topologiaxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            {% set papiroacertijosxm = (totalm.papiroacertijos*100)/6 %}
+                            {% set papiroacertijosxv = (totalv.papiroacertijos*100)/6 %}
+                            <strong>Papiro</strong><br><small>M: {{ totalm.papiroacertijos }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if papiroacertijosxm > 0 and papiroacertijosxm <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxm }}%"></div>
+                                {% elseif papiroacertijosxm > 33.33 and papiroacertijosxm <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxm }}%"></div>
+                                {% elseif papiroacertijosxm > 66.66  and papiroacertijosxm < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxm }}%"></div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <small><br>V: {{ totalv.papiroacertijos }} de 6</small>
+                            <div class="progress progress-mini">
+                                {% if papiroacertijosxv > 0 and papiroacertijosxv <= 33.33 %}
+                                    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxv }}%"></div>
+                                {% elseif papiroacertijosxv > 33.33 and papiroacertijosxv <= 66.66 %}
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxv }}%"></div>
+                                {% elseif papiroacertijosxv > 66.66  and papiroacertijosxv < 100 %}
+                                    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxv }}%"></div>
+                                {% endif %}
+                            </div>
+
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <span class="badge">{{ registros|length }}</span>
+                            <strong>Registros</strong><br>
+                            {% set vegetarianos = 0 %}
+                            {% for registro in registros %}
+                                {% if registro.comida == true %}
+                                    {% set vegetarianos = vegetarianos + 1 %}
+                                {% endif %}
+                            {% endfor %}
+                            {% set mujeres = 0 %}
+                            {% set hombres = 0 %}
+                            {% for registro in registros %}
+                                {% if registro.sexo == 0 and registro.sexo is not null %}
+                                    {% set mujeres = mujeres + 1 %}
+                                {% elseif registro.sexo == 1 and registro.sexo is not null %}
+                                    {% set hombres = hombres + 1 %}
+                                {% endif %}
+                            {% endfor %}<br>
+                            <span class="badge">{{ mujeres }}</span>
+                            <strong>Mujeres</strong><br>
+                            <span class="badge">{{ hombres }}</span>
+                            <strong>Hombres</strong>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                            <span class="badge">{{ vegetarianos }}</span>
+                            <strong>Vegetarianos</strong><br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-12">
+
+            <div class="table-responsive">
+                <table class="table table-striped table-bordered table-hover table-condensed" id="example">
+                    <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>email</th>
+                        <th>Institución</th>
+                        <th>Carrera</th>
+                        <th>Matutino</th>
+                        <th>Vespertino</th>
+                        <th>Vegetariana</th>
+                        <th>Playera</th>
+                        <th>Talla</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for registro in registros %}
+                        <tr>
+                            <td><a href="{{ path('registro_edit', { 'id': registro.id, 'mail': registro.mail }) }}">{{ registro.id }}</a></td>
+                            <td>{{ registro.paterno |title ~ ' ' ~ registro.materno |title ~ ' ' ~ registro.nombre |title }}</td>
+                            <td>{{ registro.mail }}</td>
+                            <td>{{ registro.institucion }}</td>
+                            <td>{{ registro.carrera }}</td>
+                            <td>{% for key,value in registro.actividadm if value %}
+                                    {{ key |title}}
+                                    <br>
+                                {% endfor %}
+                            </td>
+                            <td>{% for key,value in registro.actividadv if value %}
+                                    {{ key |title}}
+                                    <br>
+                                {% endfor %}
+                            </td>
+                            <td>{% if registro.comida == true %}
+                                    <span class="label label-success">Si</span>
+                                {% else %}
+                                    <span class="label label-danger">No</span>
+                                {% endif %}
+                            </td>
+                            <td class="text-center">{% if registro.sexo == true %}
+                                    <span class="label label-primary "><i class="fa fa-check-square"></i> Hombre</span>
+                                {% elseif registro.sexo is null %}
+                                    <span class="label label-warning "><i class="fa fa-check-exclamation"></i> <i class="fa fa-exclamation-circle"></i> Pendiente</span>
+                                {% elseif registro.sexo == false %}
+                                    <span class="label label-info "><i class="fa fa-check-square"></i> Mujer</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ registro.playera }}</td>
+                            <td class="text-center">
+                                <a href="{{ path('registro_edit', { 'id': registro.id, 'mail': registro.mail }) }}"><i class="fa fa-pencil"></i></a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" id="correos">
+        <div class="modal-dialog modal-lg" id="correos">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="gridSystemModalLabel">Correos</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            {% set total = 0 %}
+                            {% for registro in registros %}
+                                {{ registro.mail }},
+                                {% set total = total + 1 %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <br><br><strong>{{ total }} registros</strong>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+{% endblock %}
+
+    {% block javascripts %}
+        {{ parent() }}
+        <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.10.10/js/dataTables.bootstrap.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.1.1/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/1.1.1/js/buttons.bootstrap.min.js"></script>
+        <script type="text/javascript" language="javascript" src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script type="text/javascript" language="javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.1.1/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.1.1/js/buttons.print.min.js"></script>
+        <script type="text/javascript" language="javascript" src="//cdn.datatables.net/buttons/1.1.1/js/buttons.colVis.min.js"></script>
+        <script type="text/javascript" language="javascript" src="//cdn.datatables.net/plug-ins/380cb78f450/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+        <script type="text/javascript" class="init">
+            $(document).ready(function() {
+                $('#example').dataTable( {
+                    lengthChange: false,
+                    pageLength: 50,
+                    dom: 'Bfrtip',
+
+                    buttons: [
+                        {
+                            text: '<i class="fa fa-files-o"></i>',
+                            titleAttr: 'Copiar',
+                            extend: 'copyHtml5',
+                            exportOptions: {
+                                columns: ':visible'
+                            }
+                        },
+                        {
+                            extend: 'csvHtml5',
+                            text: '<i class="fa fa-file-text-o"></i>',
+                            titleAttr: 'CSV separado por comas',
+                            exportOptions: {
+                                columns: ':visible'
+                            },
+                            fieldSeparator: ',',
+                            extension: '.csv'
+                        },
+
+                        {
+                            extend: 'pdfHtml5',
+                            text: '<i class="fa fa-file-pdf-o"></i>',
+                            titleAttr: 'PDF',
+                            exportOptions: {
+                                columns: ':visible'
+                            }
+                        },
+                        {
+                            extend:'colvis',
+                            text: 'Columnas'
+                        }
+
+                    ],
+                    "pagingType": "full_numbers",
+                    "language": {
+                        buttons: {
+                            copyTitle: 'Copiado al portapapeles',
+                        },
+                        url: '//cdn.datatables.net/plug-ins/380cb78f450/i18n/Spanish.json'
+                    }
+                } );
+
+            } );
+        </script>
+    {% endblock %}
