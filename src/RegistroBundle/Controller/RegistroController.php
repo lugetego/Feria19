@@ -101,15 +101,15 @@ class RegistroController extends Controller
                 return $limite=$horario[$actividad] <= 4 ? true : false;
             case 'gato':
                 return $limite=$horario[$actividad] <= 4 ? true : false;
-            case 'geografia':
+            case 'ciga':
                 return $limite=$horario[$actividad] <= 4 ? true : false;
             case 'teatromatico':
                 return $limite=$horario[$actividad] <= 2 ? true : false;
-            case 'mosaicos':
+            case 'penrose':
                 return $limite=$horario[$actividad] <= 6 ? true : false;
             case 'museo':
                 return $limite=$horario[$actividad] <= 4 ? true : false;
-            case 'pesca':
+            case 'irya':
                 return $limite=$horario[$actividad] <= 6 ? true : false;
             case 'rompecabezas':
                 return $limite=$horario[$actividad] <= 4 ? true : false;
@@ -140,6 +140,7 @@ class RegistroController extends Controller
         $form->remove('comida');
         $form->remove('playera');
         $form->remove('sexo');
+        $form->remove('activo');
 
         $form->add('actividadm',null,array('label'=>false));
         $form->add('actividadv',null,array('label'=>false));
@@ -216,28 +217,20 @@ class RegistroController extends Controller
         $editForm->remove('institucion');
         $editForm->remove('carrera');
 
+        if (!$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            $editForm->remove('activo');
+        }
+
         $editForm->handleRequest($request);
 
         //var_dump($editForm->get('actividadm')->getData());
-
-        $actividad= array_search(true, $editForm->get('actividadm')->getData());
-
-
-        //     var_dump($this->limiteActividad($actividad,$totalm));
-
-
-        //var_dump($limite);
-//       var_dump($totalv);
-
-
-
+        //$actividad= array_search(true, $editForm->get('actividadm')->getData());
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 
             // var_dump($editForm->get('actividadm')->getData());
             $actividadm= array_search(true, $editForm->get('actividadm')->getData());
             $actividadv= array_search(true, $editForm->get('actividadv')->getData());
-
 
             if( $this->limiteActividad($actividadm,$totalm) == true &&
                 $this->limiteActividad($actividadv,$totalv) ||
@@ -248,28 +241,21 @@ class RegistroController extends Controller
                 $em->flush();
 
             }
-
             else {
 
                 $this->get('session')->getFlashBag()->set('error', 'Verifica el número de lugares disponibles en tus actividades');
-
-
                 return $this->redirectToRoute('registro_edit', array(
                         'mail'=> $mail,
                         'id' => $registro->getId(),
-
                     )
-
                 );
-
             }
-
 
             if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
-
+                //$editForm->add('activo');
                 return $this->redirectToRoute('admin');
-
             }
+
             // Obtiene correo y msg de la forma de contacto
             $mailer = $this->get('mailer');
 

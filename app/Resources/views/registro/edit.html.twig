@@ -7,9 +7,10 @@
 
     {% if is_granted('ROLE_ADMIN') %}
         <ol class="breadcrumb">
-            <li><a href="{{ path('registro_index')  }}">Solicitudes</a></li>
+            <li><a href="{{ path('admin')  }}">Solicitudes</a></li>
             <li>{{ registro.nombre|title}} {{ registro.paterno|title}} {{ registro.materno }}</li>
         </ol>
+
     {% endif %}
 
     {% if app.session.flashbag.has('notice') %}
@@ -111,12 +112,29 @@
                             <div>{{ form_errors(edit_form.sexo) }}</div>
                         </div>
                     </div>
+
                     <div class="col-lg-3 col-md-3 col-sm-3">
                         <div class="form-group">
                             <div class="text-info ">{{ form_label(edit_form.playera) }}</div>
                             <div>{{ form_widget(edit_form.playera, {'attr': {'class': 'form-control input-sm'} } ) }}</div>
                             <div>{{ form_errors(edit_form.playera) }}</div><br>
                         </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                    {% if edit_form.activo is defined %}
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <div>
+                                    {{ form_label(edit_form.activo) }}
+                                </div>
+                                <div>
+                                    {{ form_widget(edit_form.activo) }}
+                                </div>
+                                <div>{{ form_errors(edit_form.activo) }}</div>
+                            </div>
+                        </div>
+                    {% endif %}
                     </div>
 
                     <div class="col-lg-12 col-md-12 col-sm-12">
@@ -136,8 +154,6 @@
                             <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab"><i class="fa fa-clock-o" aria-hidden="true"></i> Horario matutino</a></li>
                             <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab"><i class="fa fa-clock-o" aria-hidden="true"></i> Horario vespertino</a></li>
                         </ul>
-
-
 
                         <!-- Tab panes -->
                         <div class="tab-content ">
@@ -221,12 +237,12 @@
 
                                     <div class="col-md-6" >
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.geografia) }}
-                                            {{ form_label(edit_form.actividadm.geografia) }}
-                                            {% if totalm.geografia < 4 %}
-                                                <span class="label label-success">{{ totalm.geografia }} de 4</span>
+                                            {{ form_widget(edit_form.actividadm.ciga) }}
+                                            {{ form_label(edit_form.actividadm.ciga) }}
+                                            {% if totalm.ciga < 4 %}
+                                                <span class="label label-success">{{ totalm.ciga }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.geografia }} de 4</span>
+                                                <span class="label label-danger">{{ totalm.ciga }} de 4</span>
                                             {% endif %}
                                         </div>
                                         <div>
@@ -239,12 +255,12 @@
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.mosaicos) }}
-                                            {{ form_label(edit_form.actividadm.mosaicos) }}
-                                            {% if totalm.mosaicos < 6 %}
-                                                <span class="label label-success">{{ totalm.mosaicos }} de 6</span>
+                                            {{ form_widget(edit_form.actividadm.penrose) }}
+                                            {{ form_label(edit_form.actividadm.penrose) }}
+                                            {% if totalm.penrose < 6 %}
+                                                <span class="label label-success">{{ totalm.penrose }} de 6</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.mosaicos }} de 6</span>
+                                                <span class="label label-danger">{{ totalm.penrose }} de 6</span>
                                             {% endif %}
                                         </div>
                                         <div>
@@ -258,12 +274,12 @@
                                         </div>
 
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.pesca) }}
-                                            {{ form_label(edit_form.actividadm.pesca) }}
-                                            {% if totalm.pesca < 6 %}
-                                                <span class="label label-success">{{ totalm.pesca }} de 6</span>
+                                            {{ form_widget(edit_form.actividadm.irya) }}
+                                            {{ form_label(edit_form.actividadm.irya) }}
+                                            {% if totalm.irya < 6 %}
+                                                <span class="label label-success">{{ totalm.irya }} de 6</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.pesca }} de 6</span>
+                                                <span class="label label-danger">{{ totalm.irya }} de 6</span>
                                             {% endif %}
                                         </div>
                                         <div>
@@ -339,19 +355,19 @@
                                         <div>
                                             {{ form_widget(edit_form.actividadv.dimensiones) }}
                                             {{ form_label(edit_form.actividadv.dimensiones) }}
-                                            {% if totalv.dimensiones < 6 %}
-                                                <span class="label label-success">{{ totalv.dimensiones }} de 6</span>
+                                            {% if totalv.dimensiones < 4 %}
+                                                <span class="label label-success">{{ totalv.dimensiones }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.dimensiones }} de 6</span>
+                                                <span class="label label-danger">{{ totalv.dimensiones }} de 4</span>
                                             {% endif %}
                                         </div>
                                         <div>
                                             {{ form_widget(edit_form.actividadv.divulgamat) }}
                                             {{ form_label(edit_form.actividadv.divulgamat) }}
-                                            {% if totalv.divulgamat < 6 %}
-                                                <span class="label label-success">{{ totalv.divulgamat }} de 6</span>
+                                            {% if totalv.divulgamat < 4 %}
+                                                <span class="label label-success">{{ totalv.divulgamat }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.divulgamat }} de 6</span>
+                                                <span class="label label-danger">{{ totalv.divulgamat }} de 4</span>
                                             {% endif %}
                                         </div>
                                         <div>
@@ -366,22 +382,22 @@
                                         <div>
                                             {{ form_widget(edit_form.actividadv.gato) }}
                                             {{ form_label(edit_form.actividadv.gato) }}
-                                            {% if totalv.gato < 5 %}
-                                                <span class="label label-success">{{ totalv.gato }} de 5</span>
+                                            {% if totalv.gato < 4 %}
+                                                <span class="label label-success">{{ totalv.gato }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.gato }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.gato }} de 4</span>
                                             {% endif %}
                                         </div>
                                     </div>
 
                                     <div class="col-md-6" >
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.geografia) }}
-                                            {{ form_label(edit_form.actividadv.geografia) }}
-                                            {% if totalv.geografia < 4 %}
-                                                <span class="label label-success">{{ totalv.geografia }} de 4</span>
+                                            {{ form_widget(edit_form.actividadv.ciga) }}
+                                            {{ form_label(edit_form.actividadv.ciga) }}
+                                            {% if totalv.ciga < 4 %}
+                                                <span class="label label-success">{{ totalv.ciga }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.geografia }} de 4</span>
+                                                <span class="label label-danger">{{ totalv.ciga }} de 4</span>
                                             {% endif %}
                                         </div>
                                         <div>
@@ -394,40 +410,40 @@
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.mosaicos) }}
-                                            {{ form_label(edit_form.actividadv.mosaicos) }}
-                                            {% if totalv.mosaicos < 6 %}
-                                                <span class="label label-success">{{ totalv.mosaicos }} de 6</span>
+                                            {{ form_widget(edit_form.actividadv.penrose) }}
+                                            {{ form_label(edit_form.actividadv.penrose) }}
+                                            {% if totalv.penrose < 6 %}
+                                                <span class="label label-success">{{ totalv.penrose }} de 6</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.mosaicos }} de 6</span>
+                                                <span class="label label-danger">{{ totalv.penrose }} de 6</span>
                                             {% endif %}
                                         </div>
                                         <div>
                                             {{ form_widget(edit_form.actividadv.museo) }}
                                             {{ form_label(edit_form.actividadv.museo) }}
-                                            {% if totalv.museo < 5 %}
-                                                <span class="label label-success">{{ totalv.museo }} de 5</span>
+                                            {% if totalv.museo < 4 %}
+                                                <span class="label label-success">{{ totalv.museo }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.mueso }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.mueso }} de 4</span>
                                             {% endif %}
                                         </div>
 
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.pesca) }}
-                                            {{ form_label(edit_form.actividadv.pesca) }}
-                                            {% if totalv.pesca < 6 %}
-                                                <span class="label label-success">{{ totalv.pesca }} de 6</span>
+                                            {{ form_widget(edit_form.actividadv.irya) }}
+                                            {{ form_label(edit_form.actividadv.irya) }}
+                                            {% if totalv.irya < 6 %}
+                                                <span class="label label-success">{{ totalv.irya }} de 6</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.pesca }} de 6</span>
+                                                <span class="label label-danger">{{ totalv.irya }} de 6</span>
                                             {% endif %}
                                         </div>
                                         <div>
                                             {{ form_widget(edit_form.actividadv.rompecabezas) }}
                                             {{ form_label(edit_form.actividadv.rompecabezas) }}
-                                            {% if totalv.rompecabezas < 5 %}
-                                                <span class="label label-success">{{ totalv.rompecabezas }} de 5</span>
+                                            {% if totalv.rompecabezas < 4 %}
+                                                <span class="label label-success">{{ totalv.rompecabezas }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.rompecabezas }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.rompecabezas }} de 4</span>
                                             {% endif %}
                                         </div>
                                         <div>

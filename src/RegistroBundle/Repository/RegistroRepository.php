@@ -20,9 +20,9 @@ class RegistroRepository extends EntityRepository
     public function countActividad($horario)
     {
         $accessor = PropertyAccess::createPropertyAccessor();
-        $registros = $this->findAll();
+        $registros = $this->findByActivo(true);
         $burbujas = $braille = $canguro = $club = $dimensiones = $divulgamat =
-        $expo = $gato = $geografia = $teatromatico = $mosaicos = $museo = $pesca =
+        $expo = $gato = $ciga = $teatromatico = $penrose = $museo = $irya =
         $rompecabezas = $topologia = $papiroacertijos = $planetario = 0;
 
         foreach ($registros as $registro) {
@@ -52,20 +52,20 @@ class RegistroRepository extends EntityRepository
                 case 'gato':
                     $gato = $gato + 1;
                     break;
-                case 'geografia':
-                    $geografia = $geografia + 1;
+                case 'ciga':
+                    $ciga = $ciga + 1;
                     break;
                 case 'teatromatico':
                     $teatromatico = $teatromatico + 1;
                     break;
-                case 'mosaicos':
-                    $mosaicos = $mosaicos + 1;
+                case 'penrose':
+                    $penrose = $penrose + 1;
                     break;
                 case 'museo':
                     $museo = $museo + 1;
                     break;
-                case 'pesca':
-                    $pesca = $pesca + 1;
+                case 'irya':
+                    $irya = $irya + 1;
                     break;
                 case 'planetario':
                     $planetario = $planetario + 1;
@@ -92,11 +92,11 @@ class RegistroRepository extends EntityRepository
             'divulgamat'=>$divulgamat,
             'expo'=>$expo,
             'gato'=>$gato,
-            'geografia'=>$geografia,
+            'ciga'=>$ciga,
             'teatromatico'=>$teatromatico,
-            'mosaicos'=>$mosaicos,
+            'penrose'=>$penrose,
             'museo'=>$museo,
-            'pesca'=>$pesca,
+            'irya'=>$irya,
             'rompecabezas'=>$rompecabezas,
             'topologia'=>$topologia,
             'papiroacertijos'=>$papiroacertijos,

@@ -111,6 +111,13 @@ class Registro
     private $playera;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="activo", type="boolean", nullable=true)
+     */
+    private $activo=true;
+
+    /**
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $created;
@@ -417,6 +424,23 @@ class Registro
     {
         $this->playera = $playera;
     }
+
+    /**
+     * @return boolean
+     */
+    public function isActivo()
+    {
+        return $this->activo;
+    }
+
+    /**
+     * @param boolean $activo
+     */
+    public function setActivo($activo)
+    {
+        $this->activo = $activo;
+    }
+
 
     /**
      * @Assert\IsTrue(message = "Es necesario que selecciones hasta 2 actividades, una  por cada horario"))

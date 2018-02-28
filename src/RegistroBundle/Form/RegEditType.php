@@ -66,6 +66,8 @@ class RegEditType extends AbstractType
                 'label'=>'Talla de playera',
 
             ))
+            ->add('activo')
+
         ;
     }
 

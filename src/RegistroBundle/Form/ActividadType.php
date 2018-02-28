@@ -49,7 +49,7 @@ class ActividadType extends AbstractType
                 'label'=>'Gato 3D y cubiloco',
                 'required'=>false,
             ))
-            ->add('geografia', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('ciga', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Geografía y matemáticas (CIGA-UNAM)',
                 'required'=>false,
             ))
@@ -57,7 +57,7 @@ class ActividadType extends AbstractType
                 'label'=>'Teatromático',
                 'required'=>false,
             ))
-            ->add('mosaicos', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('penrose', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Mosaicos en desorden (Penrose)',
                 'required'=>false,
             ))
@@ -65,7 +65,7 @@ class ActividadType extends AbstractType
                 'label'=>'Museo Matemático: IMAGINARIO',
                 'required'=>false,
             ))
-            ->add('pesca', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('irya', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Planetario (IRyA-UNAM)',
                 'required'=>false,
             ))
