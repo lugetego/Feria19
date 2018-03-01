@@ -66,7 +66,15 @@ class RegEditType extends AbstractType
                 'label'=>'Talla de playera',
 
             ))
-            ->add('activo')
+            ->add('activo', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
+                'choices'=>array(
+                    true=>'Si ',
+                    false=>'No '),
+                'expanded'=>true,
+                'required'=>true,
+                'label'=>'Registro activo',
+                'choices_as_values' => false,
+            ))
 
         ;
     }
