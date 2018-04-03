@@ -143,12 +143,16 @@
                         <br>
                         <div><h2>Actividades</h2> </div>
                     </div>
-                    {{ form_errors(edit_form) }}
-                    {% for flashMessage in app.session.flashbag.get('error') %}
 
-                        <span class=" label label-danger"> <i class="fa fa-times"></i> {{ flashMessage }}</span>
 
-                    {% endfor %}
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            {{ form_errors(edit_form) }}
+                            {% for flashMessage in app.session.flashbag.get('error') %}
+                                <span class=" label label-danger"> <i class="fa fa-times"></i> {{ flashMessage }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
 
                     <div class="col-lg-12">
                         <!-- Nav tabs -->
@@ -166,10 +170,10 @@
                                         <div>
                                             {{ form_widget(edit_form.actividadm.braille) }}
                                             {{ form_label(edit_form.actividadm.braille) }}
-                                            {% if totalm.braille < 5 %}
-                                                <span class="label label-success">{{ totalm.braille }} de 5</span>
+                                            {% if totalm.braille < 6 %}
+                                                <span class="label label-success">{{ totalm.braille }} de 6</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.braille }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.braille }} de 6</span>
                                             {% endif %}
                                         </div>
                                         <div>
@@ -193,10 +197,10 @@
                                         <div>
                                             {{ form_widget(edit_form.actividadm.club) }}
                                             {{ form_label(edit_form.actividadm.club) }}
-                                            {% if totalm.club < 5 %}
-                                                <span class="label label-success">{{ totalm.club }} de 5</span>
+                                            {% if totalm.club < 6 %}
+                                                <span class="label label-success">{{ totalm.club }} de 6</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.club }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.club }} de 6</span>
                                             {% endif %}
                                         </div>
                                         <div>
@@ -384,10 +388,10 @@
                                         <div>
                                             {{ form_widget(edit_form.actividadv.gato) }}
                                             {{ form_label(edit_form.actividadv.gato) }}
-                                            {% if totalv.gato < 4 %}
-                                                <span class="label label-success">{{ totalv.gato }} de 4</span>
+                                            {% if totalv.gato < 5 %}
+                                                <span class="label label-success">{{ totalv.gato }} de 5</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.gato }} de 4</span>
+                                                <span class="label label-danger">{{ totalv.gato }} de 5</span>
                                             {% endif %}
                                         </div>
                                     </div>

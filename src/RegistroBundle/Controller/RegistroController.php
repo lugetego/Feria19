@@ -84,40 +84,41 @@ class RegistroController extends Controller
     public function limiteActividad($actividad,$horario)
 
     {
+
         switch ($actividad) {
             case 'braille':
-                return $limite = $horario[$actividad] <= 5 ? true : false;
+                return $limite = $horario[$actividad] < 5 ? true : false;
             case 'burbujas':
-                return $limite= $horario[$actividad] <= 6 ? true : false;
+                return $limite= $horario[$actividad] < 6 ? true : false;
             case 'canguro':
-                return $limite= $horario[$actividad] <= 5 ? true : false;
+                return $limite= $horario[$actividad] < 5 ? true : false;
             case 'club':
-                return $limite= $horario[$actividad] <= 5 ? true : false;
+                return $limite= $horario[$actividad] < 5 ? true : false;
             case 'dimensiones':
-                return $limite = $horario[$actividad] <= 4 ? true : false;
+                return $limite = $horario[$actividad] < 4 ? true : false;
             case 'divulgamat':
-                return $limite= $horario[$actividad] <= 4 ? true : false;
+                return $limite= $horario[$actividad] < 4 ? true : false;
             case 'expo':
-                return $limite=$horario[$actividad] <= 4 ? true : false;
+                return $limite=$horario[$actividad] < 4 ? true : false;
             case 'gato':
-                return $limite=$horario[$actividad] <= 4 ? true : false;
+                return $limite=$horario[$actividad] < 4 ? true : false;
             case 'ciga':
-                return $limite=$horario[$actividad] <= 4 ? true : false;
+                return $limite=$horario[$actividad] < 4 ? true : false;
             case 'teatromatico':
-                return $limite=$horario[$actividad] <= 2 ? true : false;
+                return $limite=$horario[$actividad] < 2 ? true : false;
             case 'penrose':
-                return $limite=$horario[$actividad] <= 6 ? true : false;
+                return $limite=$horario[$actividad] < 6 ? true : false;
             case 'museo':
-                return $limite=$horario[$actividad] <= 4 ? true : false;
+                return $limite=$horario[$actividad] < 4 ? true : false;
             case 'irya':
-                return $limite=$horario[$actividad] <= 6 ? true : false;
+                return $limite=$horario[$actividad] < 6 ? true : false;
             case 'rompecabezas':
-                return $limite=$horario[$actividad] <= 4 ? true : false;
+                return $limite=$horario[$actividad] < 4 ? true : false;
             case 'topologia':
-                return $limite=$horario[$actividad] <= 6 ? true : false;
+                return $limite=$horario[$actividad] < 6 ? true : false;
                 break;
             case 'papiroacertijos':
-                return $limite=$horario[$actividad] <= 4 ? true : false;
+                return $limite=$horario[$actividad] < 4 ? true : false;
                 break;
         }
     }
@@ -224,30 +225,53 @@ class RegistroController extends Controller
         $editForm->handleRequest($request);
 
         //var_dump($editForm->get('actividadm')->getData());
-        //$actividad= array_search(true, $editForm->get('actividadm')->getData());
+        //var_dump($actividad= array_search(true, $editForm->get('actividadv')->getData()));
+        //var_dump($totalm);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 
-            // var_dump($editForm->get('actividadm')->getData());
+//             var_dump($editForm->get('actividadm')->getData());
             $actividadm= array_search(true, $editForm->get('actividadm')->getData());
             $actividadv= array_search(true, $editForm->get('actividadv')->getData());
 
-            if( ($this->limiteActividad($actividadm,$totalm) == true && $this->limiteActividad($actividadv,$totalv) == true ) ||
-                ($actividadm == null || $actividadv == null) ){
+
+
+//            if( ($this->limiteActividad($actividadm,$totalm) == true && $this->limiteActividad($actividadv,$totalv) == true ) ||
+//                ($actividadm == null || $actividadv == null) ){
+//                $em = $this->getDoctrine()->getManager();
+//                $em->persist($registro);
+//                $em->flush();
+//
+//            }
+
+            if ( ($actividadm != null) && ($this->limiteActividad($actividadm, $totalm) == false)) {
+
+                $this->get('session')->getFlashBag()->set('error', 'Verifica el número de lugares disponibles en tus actividades');
+                return $this->redirectToRoute('registro_edit', array(
+                        'mail' => $mail,
+                        'id' => $registro->getId(),
+                    )
+                );
+            }
+
+            elseif ( ($actividadv != null) && ($this->limiteActividad($actividadv, $totalv) == false)) {
+
+                $this->get('session')->getFlashBag()->set('error', 'Verifica el número de lugares disponibles en tus actividades');
+                return $this->redirectToRoute('registro_edit', array(
+                        'mail' => $mail,
+                        'id' => $registro->getId(),
+                    )
+                );
+            }
+
+            else {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($registro);
                 $em->flush();
 
             }
-            else {
 
-                $this->get('session')->getFlashBag()->set('error', 'Verifica el número de lugares disponibles en tus actividades');
-                return $this->redirectToRoute('registro_edit', array(
-                        'mail'=> $mail,
-                        'id' => $registro->getId(),
-                    )
-                );
-            }
+
 
             if ($this->get('security.context')->isGranted('ROLE_ADMIN')) {
                 //$editForm->add('activo');
