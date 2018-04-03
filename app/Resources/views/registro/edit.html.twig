@@ -63,7 +63,7 @@
                     <p class="text-justify">
                         <small><i class="fa fa-check-circle" aria-hidden="true"></i></small> Puedes seleccionar una actividad por cada horario (matutino, vespertino).<br>
                         <small><i class="fa fa-check-circle" aria-hidden="true"></i></small> En cada actividad se indicará la cantidad de <span class="label label-success">lugares disponibles.</span>
-                        También se indicará cuando la actividad <span class="label label-danger">no tenga lugares disponibles</span><br>
+                        También se indicará cuando la actividad <span class="label label-danger">tenga pocos o no tenga lugares disponibles</span><br>
                         <small><i class="fa fa-check-circle" aria-hidden="true"></i></small> Una vez que enviés el formulario ya no será posible modificar tu regsitro.<br>
                         <small><i class="fa fa-check-circle" aria-hidden="true"></i></small> Después de enviar el formulario recibirás un correo de confirmación a la dirección que nos proporcionaste,
                         de no ser así puedes escribir a <br><strong>webmaster<i class="fa fa-at"></i>matmor.unam.mx</strong> para confirmar que se haya actualizado tu
@@ -271,7 +271,7 @@
                                             {% if totalm.museo < 4 %}
                                                 <span class="label label-success">{{ totalm.museo }} de 4</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.mueso }} de 4</span>
+                                                <span class="label label-danger">{{ totalm.museo }} de 4</span>
                                             {% endif %}
                                         </div>
 
