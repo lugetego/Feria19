@@ -233,7 +233,7 @@ class RegistroController extends Controller
             $actividadv= array_search(true, $editForm->get('actividadv')->getData());
 
             if( $this->limiteActividad($actividadm,$totalm) == true &&
-                $this->limiteActividad($actividadv,$totalv) ||
+                $this->limiteActividad($actividadv,$totalv) == true ||
                 $actividadm == null || $actividadv == null ){
 
                 $em = $this->getDoctrine()->getManager();
