@@ -451,7 +451,7 @@
                                         <div>
                                             {{ form_widget(edit_form.actividadv.topologia) }}
                                             {{ form_label(edit_form.actividadv.topologia) }}
-                                            {% if totalv.topologia < 6 %}
+                                            {% if totalv.topologia <= 6 %}
                                                 <span class="label label-success">{{ totalv.topologia }} de 6</span>
                                             {% else %}
                                                 <span class="label label-danger">{{ totalv.topologia }} de 6</span>
