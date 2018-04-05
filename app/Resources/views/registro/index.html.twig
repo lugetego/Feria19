@@ -478,9 +478,9 @@
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                            {% set papiroacertijosxm = (totalm.papiroacertijos*100)/6 %}
-                            {% set papiroacertijosxv = (totalv.papiroacertijos*100)/6 %}
-                            <strong>Papiro</strong><br><small>M: {{ totalm.papiroacertijos }} de 6</small>
+                            {% set papiroacertijosxm = (totalm.papiroacertijos*100)/5 %}
+                            {% set papiroacertijosxv = (totalv.papiroacertijos*100)/5 %}
+                            <strong>Papiro</strong><br><small>M: {{ totalm.papiroacertijos }} de 5</small>
                             <div class="progress progress-mini">
                                 {% if papiroacertijosxm > 0 and papiroacertijosxm <= 33.33 %}
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxm }}%"></div>
@@ -492,7 +492,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
-                            <small><br>V: {{ totalv.papiroacertijos }} de 6</small>
+                            <small><br>V: {{ totalv.papiroacertijos }} de 5</small>
                             <div class="progress progress-mini">
                                 {% if papiroacertijosxv > 0 and papiroacertijosxv <= 33.33 %}
                                     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: {{ papiroacertijosxv }}%"></div>

@@ -118,7 +118,7 @@ class RegistroController extends Controller
                 return $limite=$horario[$actividad] < 6 ? true : false;
                 break;
             case 'papiroacertijos':
-                return $limite=$horario[$actividad] < 4 ? true : false;
+                return $limite=$horario[$actividad] < 5 ? true : false;
                 break;
         }
     }
