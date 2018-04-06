@@ -95,27 +95,27 @@ class RegistroController extends Controller
             case 'club':
                 return $limite= $horario[$actividad] < 5 ? true : false;
             case 'dimensiones':
-                return $limite = $horario[$actividad] < 4 ? true : false;
+                return $limite = $horario[$actividad] < 5 ? true : false;
             case 'divulgamat':
-                return $limite= $horario[$actividad] < 4 ? true : false;
+                return $limite= $horario[$actividad] < 5 ? true : false;
             case 'expo':
                 return $limite=$horario[$actividad] < 4 ? true : false;
             case 'gato':
-                return $limite=$horario[$actividad] < 4 ? true : false;
+                return $limite=$horario[$actividad] < 5 ? true : false;
             case 'ciga':
-                return $limite=$horario[$actividad] < 4 ? true : false;
+                return $limite=$horario[$actividad] < 5 ? true : false;
             case 'teatromatico':
                 return $limite=$horario[$actividad] < 2 ? true : false;
             case 'penrose':
                 return $limite=$horario[$actividad] < 6 ? true : false;
             case 'museo':
-                return $limite=$horario[$actividad] < 4 ? true : false;
+                return $limite=$horario[$actividad] < 5 ? true : false;
             case 'irya':
                 return $limite=$horario[$actividad] < 6 ? true : false;
             case 'rompecabezas':
-                return $limite=$horario[$actividad] < 4 ? true : false;
+                return $limite=$horario[$actividad] < 5 ? true : false;
             case 'topologia':
-                return $limite=$horario[$actividad] < 6 ? true : false;
+                return $limite=$horario[$actividad] < 7 ? true : false;
                 break;
             case 'papiroacertijos':
                 return $limite=$horario[$actividad] < 5 ? true : false;
