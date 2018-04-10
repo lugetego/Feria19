@@ -33,12 +33,16 @@ class AdminController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $registros = $em->getRepository('RegistroBundle:Registro')->findAll();
+//        $registros = $em->getRepository('RegistroBundle:Registro')->findAll();
+        $registros = $em->getRepository('RegistroBundle:Registro')->findByActivo(true);
+        $noactivos = $em->getRepository('RegistroBundle:Registro')->findByActivo(false);
+
         $totalm = $em->getRepository('RegistroBundle:Registro')->countActividad('actividadm');
         $totalv = $em->getRepository('RegistroBundle:Registro')->countActividad('actividadv');
 
         return $this->render('registro/index.html.twig', array(
             'registros' => $registros,
+            'noactivos' => $noactivos,
             'totalm'=>$totalm,
             'totalv'=>$totalv,
 

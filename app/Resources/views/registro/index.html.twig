@@ -506,9 +506,11 @@
                         </div>
 
 
-                        <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-left padding-0">
                             <span class="badge">{{ registros|length }}</span>
-                            <strong>Registros</strong><br>
+                            <strong>Registros activos</strong><br>
+                            <span class="badge">{{ noactivos|length }}</span>
+                            <strong>Registros inactivos</strong><br>
                             {% set vegetarianos = 0 %}
                             {% for registro in registros %}
                                 {% if registro.comida == true %}
@@ -525,15 +527,14 @@
                                 {% endif %}
                             {% endfor %}<br>
                             <span class="badge">{{ mujeres }}</span>
-                            <strong>Mujeres</strong><br>
+                            <strong>Mujeres en actividades</strong><br>
                             <span class="badge">{{ hombres }}</span>
-                            <strong>Hombres</strong>
+                            <strong>Hombres en actividades</strong>
                         </div>
 
                         <div class="col-md-6 col-sm-6 col-xs-6 text-left padding-0">
                             <span class="badge">{{ vegetarianos }}</span>
                             <strong>Vegetarianos</strong><br>
-
                         </div>
                     </div>
                 </div>
