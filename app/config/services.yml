@@ -2,6 +2,55 @@
 # http://symfony.com/doc/current/book/service_container.html
 parameters:
 #    parameter_name: value
+    evento: 'Feria Matemática 2019'
+    actividad1: Matemáticas y Braille
+    actividad1m: 6
+    actividad1v: 5
+    actividad2: Burbujas y Matemáticas
+    actividad2m: 5
+    actividad2v: 5
+    actividad3: Canguro Matemático
+    actividad3m: 5
+    actividad3v: 5
+    actividad4: Club de mate
+    actividad4m: 5
+    actividad4v: 5
+    actividad5: Dimensiones
+    actividad5m: 5
+    actividad5v: 5
+    actividad6: Divulgamat
+    actividad6m: 1
+    actividad6v: 1
+    actividad7: Expo
+    actividad7m: 1
+    actividad7v: 1
+    actividad8: Gato
+    actividad8m: 5
+    actividad8v: 5
+    actividad9: CIGA
+    actividad9m: 5
+    actividad9v: 5
+    actividad10: Teatro
+    actividad10m: 5
+    actividad10v: 5
+    actividad11: Museo
+    actividad11m: 5
+    actividad11v: 5
+    actividad12: Penrose
+    actividad12m: 5
+    actividad12v: 5
+    actividad13: iRYa
+    actividad13m: 5
+    actividad13v: 5
+    actividad14: Rompe
+    actividad14m: 5
+    actividad14v: 5
+    actividad15: Top
+    actividad15m: 5
+    actividad15v: 5
+    actividad16: papiro
+    actividad16m: 2
+    actividad16v: 1
 
 services:
 #    service_name:

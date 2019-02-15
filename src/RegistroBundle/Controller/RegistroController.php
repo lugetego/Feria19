@@ -81,45 +81,91 @@ class RegistroController extends Controller
     }
 
 
-    public function limiteActividad($actividad,$horario)
+    public function limiteActividad($actividad,$horario,$turno)
 
     {
 
         switch ($actividad) {
-            case 'braille':
-                return $limite = $horario[$actividad] < 5 ? true : false;
-            case 'burbujas':
-                return $limite= $horario[$actividad] < 6 ? true : false;
-            case 'canguro':
-                return $limite= $horario[$actividad] < 5 ? true : false;
-            case 'club':
-                return $limite= $horario[$actividad] < 5 ? true : false;
-            case 'dimensiones':
-                return $limite = $horario[$actividad] < 5 ? true : false;
-            case 'divulgamat':
-                return $limite= $horario[$actividad] < 5 ? true : false;
-            case 'expo':
-                return $limite=$horario[$actividad] < 4 ? true : false;
-            case 'gato':
-                return $limite=$horario[$actividad] < 5 ? true : false;
-            case 'ciga':
-                return $limite=$horario[$actividad] < 5 ? true : false;
-            case 'teatromatico':
-                return $limite=$horario[$actividad] < 2 ? true : false;
-            case 'penrose':
-                return $limite=$horario[$actividad] < 6 ? true : false;
-            case 'museo':
-                return $limite=$horario[$actividad] < 5 ? true : false;
-            case 'irya':
-                return $limite=$horario[$actividad] < 6 ? true : false;
-            case 'rompecabezas':
-                return $limite=$horario[$actividad] < 5 ? true : false;
-            case 'topologia':
-                return $limite=$horario[$actividad] < 7 ? true : false;
-                break;
-            case 'papiroacertijos':
-                return $limite=$horario[$actividad] < 5 ? true : false;
-                break;
+            case 'actividad1':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad1m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad1v') ? true : false;
+            case 'actividad2':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad2m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad2v') ? true : false;
+            case 'actividad3':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad3m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad3v') ? true : false;
+            case 'actividad4':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad4m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad4v') ? true : false;
+            case 'actividad5':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad5m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad5v') ? true : false;
+            case 'actividad6':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad6m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad6v') ? true : false;
+            case 'actividad7':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad7m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad7v') ? true : false;
+            case 'actividad8':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad8m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad8v') ? true : false;
+            case 'actividad9':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad9m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad9v') ? true : false;
+            case 'actividad10':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad10m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad10v') ? true : false;
+            case 'actividad11':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad11m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad11v') ? true : false;
+            case 'actividad12':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad12m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad12v') ? true : false;
+            case 'actividad13':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad13m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad13v') ? true : false;
+            case 'actividad14':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad14m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad14v') ? true : false;
+            case 'actividad15':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad15m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad15v') ? true : false;
+            case 'actividad16':
+                if($turno == 'm' )
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad16m') ? true : false;
+                else
+                    return $limite = $horario[$actividad] < $this->getParameter('actividad16v') ? true : false;
         }
     }
 
@@ -158,7 +204,7 @@ class RegistroController extends Controller
             $mailer = $this->get('mailer');
 
             $message = \Swift_Message::newInstance()
-                ->setSubject('Registro Feria Matemática 2018')
+                ->setSubject('Registro - '. $this->getParameter('evento'))
                 ->setFrom('webmaster@matmor.unam.mx')
                 ->setTo(array($registro->getMail()))
                 ->setBcc(array('gerardo@matmor.unam.mx'))
@@ -209,6 +255,8 @@ class RegistroController extends Controller
         $totalm = $em->getRepository('RegistroBundle:Registro')->countActividad('actividadm');
         $totalv = $em->getRepository('RegistroBundle:Registro')->countActividad('actividadv');
 
+        //var_dump($totalm);
+
         //$deleteForm = $this->createDeleteForm($registro);
         $editForm = $this->createForm('RegistroBundle\Form\RegEditType', $registro);
         $editForm->remove('nombre');
@@ -224,13 +272,13 @@ class RegistroController extends Controller
 
         $editForm->handleRequest($request);
 
-        //var_dump($editForm->get('actividadm')->getData());
+     //var_dump($editForm->get('actividadm')->getData());
         //var_dump($actividad= array_search(true, $editForm->get('actividadv')->getData()));
         //var_dump($totalm);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 
-//             var_dump($editForm->get('actividadm')->getData());
+            //var_dump($editForm->get('actividadm')->getData());
             $actividadm= array_search(true, $editForm->get('actividadm')->getData());
             $actividadv= array_search(true, $editForm->get('actividadv')->getData());
 
@@ -244,8 +292,9 @@ class RegistroController extends Controller
 //
 //            }
 
-            if ( ($actividadm != null) && ($this->limiteActividad($actividadm, $totalm) == false)) {
+            if ( ($actividadm != null) && ($this->limiteActividad($actividadm, $totalm,'m') == false)) {
 
+                //var_dump($actividadm);
                 $this->get('session')->getFlashBag()->set('error', 'Verifica el número de lugares disponibles en tus actividades');
                 return $this->redirectToRoute('registro_edit', array(
                         'mail' => $mail,
@@ -254,16 +303,16 @@ class RegistroController extends Controller
                 );
             }
 
-            elseif ( ($actividadv != null) && ($this->limiteActividad($actividadv, $totalv) == false)) {
+            elseif ( ($actividadv != null) && ($this->limiteActividad($actividadv, $totalv,'v') == false)) {
 
-                $this->get('session')->getFlashBag()->set('error', 'Verifica el número de lugares disponibles en tus actividades');
+                $this->get('session')->getFlashBag()->set('error', 'Verifica el número de lugares disponibles en tu actividad seleccionada del turno vespertino');
                 return $this->redirectToRoute('registro_edit', array(
                         'mail' => $mail,
                         'id' => $registro->getId(),
                     )
                 );
             }
-
+//
             else {
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($registro);
@@ -282,7 +331,7 @@ class RegistroController extends Controller
             $mailer = $this->get('mailer');
 
             $message = \Swift_Message::newInstance()
-                ->setSubject('Actividades Feria Matemática 2018')
+                ->setSubject('Actividades - '. $this->getParameter('evento'))
                 ->setFrom('webmaster@matmor.unam.mx')
                 ->setTo(array($registro->getMail()))
                 ->setBcc(array('gerardo@matmor.unam.mx'))

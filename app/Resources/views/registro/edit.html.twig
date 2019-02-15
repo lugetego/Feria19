@@ -59,7 +59,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="well well-lg">
-                    <h4>A través de este formulario podrás integrarte a las actividades de la Feria Matemática 2018</h4>
+                    <h4>A través de este formulario podrás integrarte a las actividades de la {{ evento }}</h4>
                     <p class="text-justify">
                         <small><i class="fa fa-check-circle" aria-hidden="true"></i></small> Puedes seleccionar una actividad por cada horario (matutino, vespertino).<br>
                         <small><i class="fa fa-check-circle" aria-hidden="true"></i></small> En cada actividad se indicará la cantidad de <span class="label label-success">lugares disponibles.</span>
@@ -164,310 +164,308 @@
                         <!-- Tab panes -->
                         <div class="tab-content ">
                             <div role="tabpanel" class="tab-pane active" id="home">
-                                <p class="text-info">Selecciona una actividad para el horario matutino</p>
+                                <p class="text-info">Selecciona una actividad para el horario <mark>matutino</mark></p>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="col-md-6" >
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.braille) }}
-                                            {{ form_label(edit_form.actividadm.braille) }}
-                                            {% if totalm.braille < 6 %}
-                                                <span class="label label-success">{{ totalm.braille }} de 6</span>
+                                            {{ form_widget(edit_form.actividadm.actividad1) }}
+                                            {{ form_label(edit_form.actividadm.actividad1) }}
+                                            {% if totalm.actividad1 < actividad1m %}
+                                                <span class="label label-success">{{ totalm.actividad1 }} de {{ actividad1m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.braille }} de 6</span>
+                                                <span class="label label-danger">{{ totalm.actividad1 }} de {{ actividad1m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.burbujas) }}
-                                            {{ form_label(edit_form.actividadm.burbujas) }}
-                                            {% if totalm.burbujas < 6 %}
-                                                <span class="label label-success">{{ totalm.burbujas }} de 6</span>
+                                            {{ form_widget(edit_form.actividadm.actividad2) }}
+                                            {{ form_label(edit_form.actividadm.actividad2) }}
+                                            {% if totalm.actividad2< actividad2m %}
+                                                <span class="label label-success">{{ totalm.actividad2 }} de {{ actividad2m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.burbujas }} de 6</span>
+                                                <span class="label label-danger">{{ totalm.actividad2 }} de {{ actividad2m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.canguro) }}
-                                            {{ form_label(edit_form.actividadm.canguro) }}
-                                            {% if totalm.canguro < 5 %}
-                                                <span class="label label-success">{{ totalm.canguro }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad3) }}
+                                            {{ form_label(edit_form.actividadm.actividad3) }}
+                                            {% if totalm.actividad3< actividad3m %}
+                                                <span class="label label-success">{{ totalm.actividad3 }} de {{ actividad3m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.canguro }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.actividad3 }} de {{ actividad3m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.club) }}
-                                            {{ form_label(edit_form.actividadm.club) }}
-                                            {% if totalm.club < 6 %}
-                                                <span class="label label-success">{{ totalm.club }} de 6</span>
+                                            {{ form_widget(edit_form.actividadm.actividad4) }}
+                                            {{ form_label(edit_form.actividadm.actividad4) }}
+                                            {% if totalm.actividad4< actividad4m %}
+                                                <span class="label label-success">{{ totalm.actividad4 }} de {{ actividad4m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.club }} de 6</span>
+                                                <span class="label label-danger">{{ totalm.actividad4 }} de {{ actividad4m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.dimensiones) }}
-                                            {{ form_label(edit_form.actividadm.dimensiones) }}
-                                            {% if totalm.dimensiones < 5 %}
-                                                <span class="label label-success">{{ totalm.dimensiones }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad5) }}
+                                            {{ form_label(edit_form.actividadm.actividad5) }}
+                                            {% if totalm.actividad5< actividad5m %}
+                                                <span class="label label-success">{{ totalm.actividad5 }} de {{ actividad5m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.dimensiones }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.actividad5 }} de {{ actividad5m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.divulgamat) }}
-                                            {{ form_label(edit_form.actividadm.divulgamat) }}
-                                            {% if totalm.divulgamat < 5 %}
-                                                <span class="label label-success">{{ totalm.divulgamat }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad6) }}
+                                            {{ form_label(edit_form.actividadm.actividad6) }}
+                                            {% if totalm.actividad6< actividad6m %}
+                                                <span class="label label-success">{{ totalm.actividad6 }} de {{ actividad6m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.divulgamat }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.actividad6 }} de {{ actividad6m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.expo) }}
-                                            {{ form_label(edit_form.actividadm.expo) }}
-                                            {% if totalm.expo < 4 %}
-                                                <span class="label label-success">{{ totalm.expo }} de 4</span>
+                                            {{ form_widget(edit_form.actividadm.actividad7) }}
+                                            {{ form_label(edit_form.actividadm.actividad7) }}
+                                            {% if totalm.actividad7< actividad7m %}
+                                                <span class="label label-success">{{ totalm.actividad7 }} de {{ actividad7m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.expo }} de 4</span>
+                                                <span class="label label-danger">{{ totalm.actividad7 }} de {{ actividad7m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.gato) }}
-                                            {{ form_label(edit_form.actividadm.gato) }}
-                                            {% if totalm.gato < 5 %}
-                                                <span class="label label-success">{{ totalm.gato }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad8) }}
+                                            {{ form_label(edit_form.actividadm.actividad8) }}
+                                            {% if totalm.actividad8< actividad8m %}
+                                                <span class="label label-success">{{ totalm.actividad8 }} de {{ actividad8m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.gato }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.actividad8 }} de {{ actividad8m }}</span>
                                             {% endif %}
                                         </div>
                                     </div>
 
                                     <div class="col-md-6" >
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.ciga) }}
-                                            {{ form_label(edit_form.actividadm.ciga) }}
-                                            {% if totalm.ciga < 5 %}
-                                                <span class="label label-success">{{ totalm.ciga }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad9) }}
+                                            {{ form_label(edit_form.actividadm.actividad9) }}
+                                            {% if totalm.actividad9< actividad9m %}
+                                                <span class="label label-success">{{ totalm.actividad9 }} de {{ actividad9m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.ciga }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.actividad9 }} de {{ actividad9m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.teatromatico) }}
-                                            {{ form_label(edit_form.actividadm.teatromatico) }}
-                                            {% if totalm.teatromatico < 2 %}
-                                                <span class="label label-success">{{ totalm.teatromatico }} de 2</span>
+                                            {{ form_widget(edit_form.actividadm.actividad10) }}
+                                            {{ form_label(edit_form.actividadm.actividad10) }}
+                                            {% if totalm.actividad10< actividad10m %}
+                                                <span class="label label-success">{{ totalm.actividad10 }} de {{ actividad10m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.teatromatico }} de 2</span>
+                                                <span class="label label-danger">{{ totalm.actividad10 }} de {{ actividad10m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.penrose) }}
-                                            {{ form_label(edit_form.actividadm.penrose) }}
-                                            {% if totalm.penrose < 6 %}
-                                                <span class="label label-success">{{ totalm.penrose }} de 6</span>
+                                            {{ form_widget(edit_form.actividadm.actividad11) }}
+                                            {{ form_label(edit_form.actividadm.actividad11) }}
+                                            {% if totalm.actividad11< actividad11m %}
+                                                <span class="label label-success">{{ totalm.actividad11 }} de {{ actividad11m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.penrose }} de 6</span>
+                                                <span class="label label-danger">{{ totalm.actividad11 }} de {{ actividad11m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.museo) }}
-                                            {{ form_label(edit_form.actividadm.museo) }}
-                                            {% if totalm.museo < 5 %}
-                                                <span class="label label-success">{{ totalm.museo }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad12) }}
+                                            {{ form_label(edit_form.actividadm.actividad12) }}
+                                            {% if totalm.actividad12< actividad12m %}
+                                                <span class="label label-success">{{ totalm.actividad12 }} de {{ actividad12m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.museo }} de 5</span>
-                                            {% endif %}
-                                        </div>
-
-                                        <div>
-                                            {{ form_widget(edit_form.actividadm.irya) }}
-                                            {{ form_label(edit_form.actividadm.irya) }}
-                                            {% if totalm.irya < 6 %}
-                                                <span class="label label-success">{{ totalm.irya }} de 6</span>
-                                            {% else %}
-                                                <span class="label label-danger">{{ totalm.irya }} de 6</span>
+                                                <span class="label label-danger">{{ totalm.actividad12 }} de {{ actividad12m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.rompecabezas) }}
-                                            {{ form_label(edit_form.actividadm.rompecabezas) }}
-                                            {% if totalm.rompecabezas < 5 %}
-                                                <span class="label label-success">{{ totalm.rompecabezas }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad13) }}
+                                            {{ form_label(edit_form.actividadm.actividad13) }}
+                                            {% if totalm.actividad13< actividad13m %}
+                                                <span class="label label-success">{{ totalm.actividad13 }} de {{ actividad13m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.rompecabezas }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.actividad13 }} de {{ actividad13m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.topologia) }}
-                                            {{ form_label(edit_form.actividadm.topologia) }}
-                                            {% if totalm.topologia < 7 %}
-                                                <span class="label label-success">{{ totalm.topologia }} de 7</span>
+                                            {{ form_widget(edit_form.actividadm.actividad14) }}
+                                            {{ form_label(edit_form.actividadm.actividad14) }}
+                                            {% if totalm.actividad14< actividad14m %}
+                                                <span class="label label-success">{{ totalm.actividad14 }} de {{ actividad14m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.topologia }} de 7</span>
+                                                <span class="label label-danger">{{ totalm.actividad14 }} de {{ actividad14m }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadm.papiroacertijos) }}
-                                            {{ form_label(edit_form.actividadm.papiroacertijos) }}
-                                            {% if totalm.papiroacertijos < 5 %}
-                                                <span class="label label-success">{{ totalm.papiroacertijos }} de 5</span>
+                                            {{ form_widget(edit_form.actividadm.actividad15) }}
+                                            {{ form_label(edit_form.actividadm.actividad15) }}
+                                            {% if totalm.actividad15< actividad15m %}
+                                                <span class="label label-success">{{ totalm.actividad15 }} de {{ actividad15m }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalm.papiroacertijos }} de 5</span>
+                                                <span class="label label-danger">{{ totalm.actividad15 }} de {{ actividad15m }}</span>
+                                            {% endif %}
+                                        </div>
+                                        <div>
+                                            {{ form_widget(edit_form.actividadm.actividad16) }}
+                                            {{ form_label(edit_form.actividadm.actividad16) }}
+                                            {% if totalm.actividad16< actividad16m %}
+                                                <span class="label label-success">{{ totalm.actividad16 }} de {{ actividad16m }}</span>
+                                            {% else %}
+                                                <span class="label label-danger">{{ totalm.actividad16 }} de {{ actividad16m }}</span>
                                             {% endif %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
-                                <p class="text-info">Selecciona una actividad para el horario vespertino</p>
+                                <p class="text-info">Selecciona una actividad para el horario <mark>vespertino</mark></p>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
                                     <div class="col-md-6" >
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.braille) }}
-                                            {{ form_label(edit_form.actividadv.braille) }}
-                                            {% if totalv.braille < 5 %}
-                                                <span class="label label-success">{{ totalv.braille }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad1) }}
+                                            {{ form_label(edit_form.actividadv.actividad1) }}
+                                            {% if totalv.actividad1 < actividad1v %}
+                                                <span class="label label-success">{{ totalv.actividad1 }} de {{ actividad1v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.braille }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad1 }} de {{ actividad1v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.burbujas) }}
-                                            {{ form_label(edit_form.actividadv.burbujas) }}
-                                            {% if totalv.burbujas < 6 %}
-                                                <span class="label label-success">{{ totalv.burbujas }} de 6</span>
+                                            {{ form_widget(edit_form.actividadv.actividad2) }}
+                                            {{ form_label(edit_form.actividadv.actividad2) }}
+                                            {% if totalv.actividad2 < actividad2v %}
+                                                <span class="label label-success">{{ totalv.actividad2 }} de {{ actividad2v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.burbujas }} de 6</span>
+                                                <span class="label label-danger">{{ totalv.actividad2 }} de {{ actividad2v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.canguro) }}
-                                            {{ form_label(edit_form.actividadv.canguro) }}
-                                            {% if totalv.canguro < 5 %}
-                                                <span class="label label-success">{{ totalv.canguro }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad3) }}
+                                            {{ form_label(edit_form.actividadv.actividad3) }}
+                                            {% if totalv.actividad3 < actividad3v %}
+                                                <span class="label label-success">{{ totalv.actividad3 }} de {{ actividad3v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.canguro }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad3 }} de {{ actividad3v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.club) }}
-                                            {{ form_label(edit_form.actividadv.club) }}
-                                            {% if totalv.club < 5 %}
-                                                <span class="label label-success">{{ totalv.club }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad4) }}
+                                            {{ form_label(edit_form.actividadv.actividad4) }}
+                                            {% if totalv.actividad4 < actividad4v %}
+                                                <span class="label label-success">{{ totalv.actividad4 }} de {{ actividad4v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.club }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad4 }} de {{ actividad4v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.dimensiones) }}
-                                            {{ form_label(edit_form.actividadv.dimensiones) }}
-                                            {% if totalv.dimensiones < 5 %}
-                                                <span class="label label-success">{{ totalv.dimensiones }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad5) }}
+                                            {{ form_label(edit_form.actividadv.actividad5) }}
+                                            {% if totalv.actividad5 < actividad5v %}
+                                                <span class="label label-success">{{ totalv.actividad5 }} de {{ actividad5v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.dimensiones }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad5 }} de {{ actividad5v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.divulgamat) }}
-                                            {{ form_label(edit_form.actividadv.divulgamat) }}
-                                            {% if totalv.divulgamat < 5 %}
-                                                <span class="label label-success">{{ totalv.divulgamat }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad6) }}
+                                            {{ form_label(edit_form.actividadv.actividad6) }}
+                                            {% if totalv.actividad6 < actividad6v %}
+                                                <span class="label label-success">{{ totalv.actividad6 }} de {{ actividad6v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.divulgamat }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad6 }} de {{ actividad6v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.expo) }}
-                                            {{ form_label(edit_form.actividadv.expo) }}
-                                            {% if totalv.expo < 4 %}
-                                                <span class="label label-success">{{ totalv.expo }} de 4</span>
+                                            {{ form_widget(edit_form.actividadv.actividad7) }}
+                                            {{ form_label(edit_form.actividadv.actividad7) }}
+                                            {% if totalv.actividad7 < actividad7v %}
+                                                <span class="label label-success">{{ totalv.actividad7 }} de {{ actividad7v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.expo }} de 4</span>
+                                                <span class="label label-danger">{{ totalv.actividad7 }} de {{ actividad7v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.gato) }}
-                                            {{ form_label(edit_form.actividadv.gato) }}
-                                            {% if totalv.gato < 5 %}
-                                                <span class="label label-success">{{ totalv.gato }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad8) }}
+                                            {{ form_label(edit_form.actividadv.actividad8) }}
+                                            {% if totalv.actividad8 < actividad8v %}
+                                                <span class="label label-success">{{ totalv.actividad8 }} de {{ actividad8v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.gato }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad8 }} de {{ actividad8v }}</span>
                                             {% endif %}
                                         </div>
                                     </div>
 
                                     <div class="col-md-6" >
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.ciga) }}
-                                            {{ form_label(edit_form.actividadv.ciga) }}
-                                            {% if totalv.ciga < 5 %}
-                                                <span class="label label-success">{{ totalv.ciga }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad9) }}
+                                            {{ form_label(edit_form.actividadv.actividad9) }}
+                                            {% if totalv.actividad9 < actividad9v %}
+                                                <span class="label label-success">{{ totalv.actividad9 }} de {{ actividad9v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.ciga }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad9 }} de {{ actividad9v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.teatromatico) }}
-                                            {{ form_label(edit_form.actividadv.teatromatico) }}
-                                            {% if totalv.teatromatico < 2 %}
-                                                <span class="label label-success">{{ totalv.teatromatico }} de 2</span>
+                                            {{ form_widget(edit_form.actividadv.actividad10) }}
+                                            {{ form_label(edit_form.actividadv.actividad10) }}
+                                            {% if totalv.actividad10 < actividad10v %}
+                                                <span class="label label-success">{{ totalv.actividad10 }} de {{ actividad10v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.teatromatico }} de 2</span>
+                                                <span class="label label-danger">{{ totalv.actividad10 }} de {{ actividad10v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.penrose) }}
-                                            {{ form_label(edit_form.actividadv.penrose) }}
-                                            {% if totalv.penrose < 6 %}
-                                                <span class="label label-success">{{ totalv.penrose }} de 6</span>
+                                            {{ form_widget(edit_form.actividadv.actividad11) }}
+                                            {{ form_label(edit_form.actividadv.actividad11) }}
+                                            {% if totalv.actividad11 < actividad11v %}
+                                                <span class="label label-success">{{ totalv.actividad11 }} de {{ actividad11v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.penrose }} de 6</span>
+                                                <span class="label label-danger">{{ totalv.actividad11 }} de {{ actividad11v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.museo) }}
-                                            {{ form_label(edit_form.actividadv.museo) }}
-                                            {% if totalv.museo < 5 %}
-                                                <span class="label label-success">{{ totalv.museo }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad12) }}
+                                            {{ form_label(edit_form.actividadv.actividad12) }}
+                                            {% if totalv.actividad12 < actividad12v %}
+                                                <span class="label label-success">{{ totalv.actividad12 }} de {{ actividad12v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.museo }} de 5</span>
-                                            {% endif %}
-                                        </div>
-
-                                        <div>
-                                            {{ form_widget(edit_form.actividadv.irya) }}
-                                            {{ form_label(edit_form.actividadv.irya) }}
-                                            {% if totalv.irya < 6 %}
-                                                <span class="label label-success">{{ totalv.irya }} de 6</span>
-                                            {% else %}
-                                                <span class="label label-danger">{{ totalv.irya }} de 6</span>
+                                                <span class="label label-danger">{{ totalv.actividad12 }} de {{ actividad12v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.rompecabezas) }}
-                                            {{ form_label(edit_form.actividadv.rompecabezas) }}
-                                            {% if totalv.rompecabezas < 5 %}
-                                                <span class="label label-success">{{ totalv.rompecabezas }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad13) }}
+                                            {{ form_label(edit_form.actividadv.actividad13) }}
+                                            {% if totalv.actividad13 < actividad13v %}
+                                                <span class="label label-success">{{ totalv.actividad13 }} de {{ actividad13v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.rompecabezas }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad13 }} de {{ actividad13v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.topologia) }}
-                                            {{ form_label(edit_form.actividadv.topologia) }}
-                                            {% if totalv.topologia < 7 %}
-                                                <span class="label label-success">{{ totalv.topologia }} de 7</span>
+                                            {{ form_widget(edit_form.actividadv.actividad14) }}
+                                            {{ form_label(edit_form.actividadv.actividad14) }}
+                                            {% if totalv.actividad14 < actividad14v %}
+                                                <span class="label label-success">{{ totalv.actividad14 }} de {{ actividad14v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.topologia }} de 7</span>
+                                                <span class="label label-danger">{{ totalv.actividad14 }} de {{ actividad14v }}</span>
                                             {% endif %}
                                         </div>
                                         <div>
-                                            {{ form_widget(edit_form.actividadv.papiroacertijos) }}
-                                            {{ form_label(edit_form.actividadv.papiroacertijos) }}
-                                            {% if totalv.papiroacertijos < 5 %}
-                                                <span class="label label-success">{{ totalv.papiroacertijos }} de 5</span>
+                                            {{ form_widget(edit_form.actividadv.actividad15) }}
+                                            {{ form_label(edit_form.actividadv.actividad15) }}
+                                            {% if totalv.actividad15 < actividad15v %}
+                                                <span class="label label-success">{{ totalv.actividad15 }} de {{ actividad15v }}</span>
                                             {% else %}
-                                                <span class="label label-danger">{{ totalv.papiroacertijos }} de 5</span>
+                                                <span class="label label-danger">{{ totalv.actividad15 }} de {{ actividad15v }}</span>
+                                            {% endif %}
+                                        </div>
+                                        <div>
+                                            {{ form_widget(edit_form.actividadv.actividad16) }}
+                                            {{ form_label(edit_form.actividadv.actividad16) }}
+                                            {% if totalv.actividad16 < actividad16v %}
+                                                <span class="label label-success">{{ totalv.actividad16 }} de {{ actividad16v }}</span>
+                                            {% else %}
+                                                <span class="label label-danger">{{ totalv.actividad16 }} de {{ actividad16v }}</span>
                                             {% endif %}
                                         </div>
                                     </div>

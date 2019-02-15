@@ -17,67 +17,68 @@ class ActividadType extends AbstractType
     {
         $builder
 
-            ->add('braille', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad1', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Matematicas y Braille',
                 'required'=>false,
             ))
-            ->add('burbujas', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad2', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Burbujas y Matemáticas',
                 'required'=>false,
             ))
-            ->add('canguro', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad3', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Canguro Matemático',
                 'required'=>false,
             ))
-            ->add('club', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad4', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Club de Mate',
                 'required'=>false,
             ))
-            ->add('dimensiones', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad5', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Dimensiones (IIES-UNAM)',
                 'required'=>false,
             ))
-            ->add('divulgamat', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad6', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Divulgamat (Veracruz)',
                 'required'=>false,
             ))
-            ->add('expo', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad7', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Expo Mates',
                 'required'=>false,
             ))
-            ->add('gato', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad8', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Gato 3D y cubiloco',
                 'required'=>false,
             ))
-            ->add('ciga', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad9', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Geografía y matemáticas (CIGA-UNAM)',
                 'required'=>false,
             ))
-            ->add('teatromatico', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad10', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Teatromático',
                 'required'=>false,
             ))
-            ->add('penrose', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Mosaicos en desorden (Penrose)',
-                'required'=>false,
-            ))
-            ->add('museo', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad11', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Museo Matemático: IMAGINARIO',
                 'required'=>false,
             ))
-            ->add('irya', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad12', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+                'label'=>'Mosaicos en desorden (Penrose)',
+                'required'=>false,
+            ))
+
+            ->add('actividad13', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Planetario (IRyA-UNAM)',
                 'required'=>false,
             ))
-            ->add('rompecabezas', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad14', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Rompecabezas pitagórico',
                 'required'=>false,
             ))
-            ->add('topologia', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad15', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Pantalones locos y nudos',
                 'required'=>false,
             ))
-            ->add('papiroacertijos', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
+            ->add('actividad16', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
                 'label'=>'Papiroacertijos',
                 'required'=>false,
             ))

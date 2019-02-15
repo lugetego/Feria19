@@ -21,85 +21,82 @@ class RegistroRepository extends EntityRepository
     {
         $accessor = PropertyAccess::createPropertyAccessor();
         $registros = $this->findByActivo(true);
-        $burbujas = $braille = $canguro = $club = $dimensiones = $divulgamat =
-        $expo = $gato = $ciga = $teatromatico = $penrose = $museo = $irya =
-        $rompecabezas = $topologia = $papiroacertijos = $planetario = 0;
+        $actividad2 = $actividad1 = $actividad3 = $actividad4 = $actividad5 = $actividad6 =
+        $actividad7 = $actividad8 = $actividad9 = $actividad10 = $actividad12 = $actividad11 = $actividad13 =
+        $actividad14 = $actividad15 = $actividad16 = 0;
 
         foreach ($registros as $registro) {
             $actividad = array_search(true, $accessor->getValue($registro, $horario));
             switch ($actividad) {
-                case 'braille':
-                    $braille = $braille + 1;
+                case 'actividad1':
+                    $actividad1 = $actividad1 + 1;
                     break;
-                case 'burbujas':
-                    $burbujas = $burbujas + 1;
+                case 'actividad2':
+                    $actividad2 = $actividad2 + 1;
                     break;
-                case 'canguro':
-                    $canguro = $canguro + 1;
+                case 'actividad3':
+                    $actividad3 = $actividad3 + 1;
                     break;
-                case 'club':
-                    $club = $club + 1;
+                case 'actividad4':
+                    $actividad4 = $actividad4 + 1;
                     break;
-                case 'dimensiones':
-                    $dimensiones = $dimensiones + 1;
+                case 'actividad5':
+                    $actividad5 = $actividad5 + 1;
                     break;
-                case 'divulgamat':
-                    $divulgamat = $divulgamat + 1;
+                case 'actividad6':
+                    $actividad6 = $actividad6 + 1;
                     break;
-                case 'expo':
-                    $expo = $expo + 1;
+                case 'actividad7':
+                    $actividad7 = $actividad7 + 1;
                     break;
-                case 'gato':
-                    $gato = $gato + 1;
+                case 'actividad8':
+                    $actividad8 = $actividad8 + 1;
                     break;
-                case 'ciga':
-                    $ciga = $ciga + 1;
+                case 'actividad9':
+                    $actividad9 = $actividad9 + 1;
                     break;
-                case 'teatromatico':
-                    $teatromatico = $teatromatico + 1;
+                case 'actividad10':
+                    $actividad10 = $actividad10 + 1;
                     break;
-                case 'penrose':
-                    $penrose = $penrose + 1;
+                case 'actividad11':
+                    $actividad11 = $actividad11 + 1;
                     break;
-                case 'museo':
-                    $museo = $museo + 1;
+                case 'actividad12':
+                    $actividad12 = $actividad12 + 1;
                     break;
-                case 'irya':
-                    $irya = $irya + 1;
+                case 'actividad13':
+                    $actividad13 = $actividad13 + 1;
                     break;
-                case 'planetario':
-                    $planetario = $planetario + 1;
+                case 'actividad14':
+                    $actividad14 = $actividad14 + 1;
                     break;
-                case 'rompecabezas':
-                    $rompecabezas = $rompecabezas + 1;
+                case 'actividad15':
+                    $actividad15 = $actividad15 + 1;
                     break;
-                case 'topologia':
-                    $topologia = $topologia + 1;
-                    break;
-                case 'papiroacertijos':
-                    $papiroacertijos = $papiroacertijos + 1;
+                case 'actividad16':
+                    $actividad16 = $actividad16 + 1;
                     break;
 
             }
         }
 
         $total = array (
-            'braille'=> $braille,
-            'burbujas'=>$burbujas,
-            'canguro'=>$canguro,
-            'club'=>$club,
-            'dimensiones'=>$dimensiones,
-            'divulgamat'=>$divulgamat,
-            'expo'=>$expo,
-            'gato'=>$gato,
-            'ciga'=>$ciga,
-            'teatromatico'=>$teatromatico,
-            'penrose'=>$penrose,
-            'museo'=>$museo,
-            'irya'=>$irya,
-            'rompecabezas'=>$rompecabezas,
-            'topologia'=>$topologia,
-            'papiroacertijos'=>$papiroacertijos,
+            'actividad1'=> $actividad1,
+            'actividad2'=>$actividad2,
+            'actividad3'=>$actividad3,
+            'actividad4'=>$actividad4,
+            'actividad5'=>$actividad5,
+            'actividad6'=>$actividad6,
+            'actividad7'=>$actividad7,
+            'actividad8'=>$actividad8,
+            'actividad9'=>$actividad9,
+            'actividad10'=>$actividad10,
+            'actividad11'=>$actividad11,
+            'actividad12'=>$actividad12,
+            'actividad13'=>$actividad13,
+            'actividad14'=>$actividad14,
+            'actividad15'=>$actividad15,
+            'actividad16'=>$actividad16,
             );
 
         return $total;

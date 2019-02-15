@@ -42,6 +42,8 @@ class RegEditType extends AbstractType
                 'required'=>false,
                 'label'=>'¿Deseas comida vegetariana?',
                 'choices_as_values' => false,
+                'placeholder'=>false,
+
             ))
             ->add('sexo', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
                 'choices'=>array(
@@ -51,6 +53,8 @@ class RegEditType extends AbstractType
                 'required'=>false,
                 'label'=>'Playera',
                 'choices_as_values' => false,
+                'placeholder'=>false,
+
             ))
 
             ->add('playera','Symfony\Component\Form\Extension\Core\Type\ChoiceType', array('required'=>false,'choices'  => array(
@@ -64,6 +68,7 @@ class RegEditType extends AbstractType
                 'choices_as_values' => true,
                 'placeholder' => 'Seleccionar',
                 'label'=>'Talla de playera',
+
 
             ))
             ->add('activo', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(

@@ -37,6 +37,60 @@ twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
 
+    globals:
+        evento: '%evento%'
+        actividad1 : '%actividad1%'
+        actividad1m : '%actividad1m%'
+        actividad1v : '%actividad1v%'
+        actividad2: '%actividad2%'
+        actividad2m: '%actividad2m%'
+        actividad2v: '%actividad2v%'
+        actividad3: '%actividad3%'
+        actividad3m: '%actividad3m%'
+        actividad3v: '%actividad3v%'
+        actividad4: '%actividad4%'
+        actividad4m: '%actividad4m%'
+        actividad4v: '%actividad4v%'
+        actividad5: '%actividad5%'
+        actividad5m: '%actividad5m%'
+        actividad5v: '%actividad5v%'
+        actividad6: '%actividad6%'
+        actividad6m: '%actividad6m%'
+        actividad6v: '%actividad6v%'
+        actividad7: '%actividad7%'
+        actividad7m: '%actividad7m%'
+        actividad7v: '%actividad7v%'
+        actividad8: '%actividad8%'
+        actividad8m: '%actividad8m%'
+        actividad8v: '%actividad8v%'
+        actividad9: '%actividad9%'
+        actividad9m: '%actividad9m%'
+        actividad9v: '%actividad9v%'
+        actividad10: '%actividad10%'
+        actividad10m: '%actividad10m%'
+        actividad10v: '%actividad10v%'
+        actividad11: '%actividad11%'
+        actividad11m: '%actividad11m%'
+        actividad11v: '%actividad11v%'
+        actividad12: '%actividad12%'
+        actividad12m: '%actividad12m%'
+        actividad12v: '%actividad12v%'
+        actividad13: '%actividad13%'
+        actividad13m: '%actividad13m%'
+        actividad13v: '%actividad13v%'
+        actividad14: '%actividad14%'
+        actividad14m: '%actividad14m%'
+        actividad14v: '%actividad14v%'
+        actividad15: '%actividad15%'
+        actividad15m: '%actividad15m%'
+        actividad15v: '%actividad15v%'
+        actividad16: '%actividad16%'
+        actividad16m: '%actividad16m%'
+        actividad16v: '%actividad16v%'
+
+
+
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -68,3 +122,7 @@ swiftmailer:
     encryption: "%mailer_encryption%"
     port: "%mailer_port%"
     spool:     { type: memory }
+    stream_options:
+        ssl:
+            verify_peer: false
+            verify_peer_name: false
