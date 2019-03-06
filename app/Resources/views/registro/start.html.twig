@@ -24,14 +24,17 @@
 
         <div class="row">
             <div class="text-center">
+                {#<a href="#" onclick="$('#registronewModal').modal({'backdrop': 'static'});"#}
+                {#class="btn">Launch demo modal</a>#}
                 <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#registronewModal" >
                     <i class="fa fa-plus"></i> Nuevo registro
                 </button>
-                <a class="btn btn-danger btn-lg" data-toggle="modal" data-target=".bs-example-modal-sm" ><i class="fa fa-edit"></i> Actividades</a>
+                <a class="btn btn-danger btn-lg disabled" data-toggle="modal" data-target=".bs-example-modal-sm" ><i class="fa fa-edit"></i> Actividades</a>
                 <br><br>
                 <div class="alert alert-info  col-md-6 col-lg-offset-3">
                     <h4><i class="fa fa-calendar"></i> <strong> Próximamente </strong> te podrás registrar en las actividades.</h4>
                     {#<h4><i class="fa fa-check"></i> <strong> Ya puedes registrarte en las actividades.</h4>#}
+                    {#<h4><i class="fa fa-check"></i> <strong> Para integrarte a las actividades es necesario que previamente te hayas registrado.</h4>#}
                 </div>
             </div>
         </div>
@@ -47,7 +50,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="registronewModalLabel">Nuevo registro</h4>
+                        <h4 class="modal-title" id="registronewModalLabel"> <i class="fa fa-plus"></i>  Nuevo registro</h4>
                     </div>
                     <div class="modal-body">
                         {% render(controller('RegistroBundle:Registro:new')) %}
@@ -73,9 +76,8 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <div>
-                                            {{ form_label(form.email) }}
-                                        </div>
+
+                                        <div>{{ form_label(form.email) }}</div>
                                         <div>
                                             {{ form_widget(form.email, {'attr': {'class': 'form-control input-sm'} } ) }}
                                         </div>
@@ -83,7 +85,7 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-lg-12 col-lg-offset-5">
-                                                <input type="submit" value="Buscar" class="btn btn-success" />
+                                                <input type="submit" value="Buscar" class="btn btn-success"  />
                                             </div>
                                         </div>
                                     </div>
@@ -95,4 +97,8 @@
         </div>
     {% endif %}
 
+
+
     {% endblock %}
+
+

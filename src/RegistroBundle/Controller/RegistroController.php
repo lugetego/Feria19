@@ -47,7 +47,7 @@ class RegistroController extends Controller
 
         $defaultData = array('message' => 'Type your message here');
         $formail = $this->createFormBuilder($defaultData)
-            ->add('email', 'Symfony\Component\Form\Extension\Core\Type\EmailType',array('label'=>'Ingresa tu correo'))
+            ->add('email', 'Symfony\Component\Form\Extension\Core\Type\EmailType',array('label'=>'Ingresa el correo con el que te registraste'))
             ->getForm();
 
         $formail->handleRequest($request);

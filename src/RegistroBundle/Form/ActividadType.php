@@ -22,7 +22,7 @@ class ActividadType extends AbstractType
                 'required'=>false,
             ))
             ->add('actividad2', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Burbujas y Matemáticas',
+                'label'=>'Burbujas',
                 'required'=>false,
             ))
             ->add('actividad3', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
@@ -34,52 +34,51 @@ class ActividadType extends AbstractType
                 'required'=>false,
             ))
             ->add('actividad5', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Dimensiones (IIES-UNAM)',
+                'label'=>'Laberintos y Superficies',
                 'required'=>false,
             ))
             ->add('actividad6', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Divulgamat (Veracruz)',
+                'label'=>'Túneles bajo el suelo - IIES',
                 'required'=>false,
             ))
             ->add('actividad7', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Expo Mates',
+                'label'=>'Expo Mates (Algoritmos)',
                 'required'=>false,
             ))
             ->add('actividad8', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Gato 3D y cubiloco',
+                'label'=>'Papiroflexia',
                 'required'=>false,
             ))
             ->add('actividad9', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Geografía y matemáticas (CIGA-UNAM)',
+                'label'=>'Geometría euclidiana y Geografía - CIGA',
                 'required'=>false,
             ))
             ->add('actividad10', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Teatromático',
+                'label'=>'ARTEMAT - IM Cuernavaca',
                 'required'=>false,
             ))
             ->add('actividad11', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Museo Matemático: IMAGINARIO',
+                'label'=>'Museo Matemático',
                 'required'=>false,
             ))
             ->add('actividad12', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Mosaicos en desorden (Penrose)',
+                'label'=>'Mosaicos en Desorden (Penrose)',
                 'required'=>false,
             ))
-
             ->add('actividad13', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Planetario (IRyA-UNAM)',
+                'label'=>'Máquina de Galton y Astronomía/Planetario - IRyA',
                 'required'=>false,
             ))
             ->add('actividad14', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Rompecabezas pitagórico',
+                'label'=>'Matemagia con cartas',
                 'required'=>false,
             ))
             ->add('actividad15', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Pantalones locos y nudos',
+                'label'=>'Nudos y Pantalones locos',
                 'required'=>false,
             ))
             ->add('actividad16', 'Symfony\Component\Form\Extension\Core\Type\CheckboxType', array(
-                'label'=>'Papiroacertijos',
+                'label'=>'El fotón en su laberinto - IGUM',
                 'required'=>false,
             ))
         ;

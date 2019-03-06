@@ -79,6 +79,8 @@ class RegEditType extends AbstractType
                 'required'=>false,
                 'label'=>'Registro activo',
                 'choices_as_values' => false,
+                'placeholder'=>false,
+
             ))
 
         ;

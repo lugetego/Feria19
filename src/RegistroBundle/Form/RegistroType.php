@@ -9,6 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormEvents;
+use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 
 
 
@@ -24,7 +25,12 @@ class RegistroType extends AbstractType
             ->add('paterno','Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Apellido paterno'))
             ->add('materno','Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Apellido materno'))
             ->add('nombre','Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Nombre'))
-            ->add('mail','Symfony\Component\Form\Extension\Core\Type\TextType', array('label' => 'Correo electrónico'))
+            ->add('mail', 'Symfony\Component\Form\Extension\Core\Type\RepeatedType',array(
+                'label'=>'Ingresa tu correo',
+                'invalid_message' => 'Las direcciones de correo no coinciden',
+                'first_options'  => array('label' => 'Email'),
+                'second_options' => array('label' => 'Confirmación Email'),
+            ))
             ->add('instituciones','Symfony\Component\Form\Extension\Core\Type\ChoiceType', array('choices'  => array(
                 'Escuela Nacional de Estudios Superiores (ENES), UNAM Campus Morelia'=>'ENES',
                 'Facultad de Ciencias Físico-Matemáticas (FISMAT), UMSNH' => 'FISMAT',

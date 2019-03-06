@@ -4,53 +4,53 @@ parameters:
 #    parameter_name: value
     evento: 'Feria Matemática 2019'
     actividad1: Matemáticas y Braille
-    actividad1m: 6
-    actividad1v: 5
-    actividad2: Burbujas y Matemáticas
-    actividad2m: 5
-    actividad2v: 5
+    actividad1m: 3
+    actividad1v: 3
+    actividad2: Burbujas
+    actividad2m: 6
+    actividad2v: 6
     actividad3: Canguro Matemático
     actividad3m: 5
     actividad3v: 5
-    actividad4: Club de mate
-    actividad4m: 5
-    actividad4v: 5
-    actividad5: Dimensiones
-    actividad5m: 5
-    actividad5v: 5
-    actividad6: Divulgamat
-    actividad6m: 1
-    actividad6v: 1
-    actividad7: Expo
-    actividad7m: 1
-    actividad7v: 1
-    actividad8: Gato
-    actividad8m: 5
-    actividad8v: 5
-    actividad9: CIGA
-    actividad9m: 5
-    actividad9v: 5
-    actividad10: Teatro
-    actividad10m: 5
-    actividad10v: 5
-    actividad11: Museo
-    actividad11m: 5
-    actividad11v: 5
-    actividad12: Penrose
-    actividad12m: 5
-    actividad12v: 5
-    actividad13: iRYa
-    actividad13m: 5
-    actividad13v: 5
-    actividad14: Rompe
-    actividad14m: 5
-    actividad14v: 5
-    actividad15: Top
-    actividad15m: 5
-    actividad15v: 5
-    actividad16: papiro
-    actividad16m: 2
-    actividad16v: 1
+    actividad4: Club de Mate
+    actividad4m: 6
+    actividad4v: 6
+    actividad5: Laberintos y Superficies
+    actividad5m: 4
+    actividad5v: 4
+    actividad6: Túneles bajo el suelo - IIES
+    actividad6m: 4
+    actividad6v: 4
+    actividad7: Expo Mates (Algoritmos)
+    actividad7m: 4
+    actividad7v: 4
+    actividad8: Papiroflexia
+    actividad8m: 4
+    actividad8v: 4
+    actividad9: Geometría euclidiana y Geografía - CIGA
+    actividad9m: 4
+    actividad9v: 4
+    actividad10: ARTEMAT - IM Cuernavaca
+    actividad10m: 4
+    actividad10v: 4
+    actividad11: Museo Matemático
+    actividad11m: 2
+    actividad11v: 2
+    actividad12: Mosaicos en Desorden (Penrose)
+    actividad12m: 6
+    actividad12v: 6
+    actividad13: Máquina de Galton y Astronomía / Planetario - IRyA
+    actividad13m: 8
+    actividad13v: 8
+    actividad14: Matemagia
+    actividad14m: 2
+    actividad14v: 2
+    actividad15: Nudos y Pantalones locos
+    actividad15m: 8
+    actividad15v: 8
+    actividad16: El fotón en su laberinto - IGUM
+    actividad16m: 4
+    actividad16v: 4
 
 services:
 #    service_name:

@@ -8,10 +8,76 @@ Actividad horario matutino:
 {% for key,value in entity.actividadm if value %}
 {% if key == 'actividad1' %}
 {{ actividad1  }}
+{% elseif key == 'actividad2' %}
+{{ actividad2  }}
+{% elseif key == 'actividad3' %}
+{{ actividad3  }}
+{% elseif key == 'actividad4' %}
+{{ actividad4  }}
+{% elseif key == 'actividad5' %}
+{{ actividad5  }}
+{% elseif key == 'actividad6' %}
+{{ actividad6  }}
+{% elseif key == 'actividad7' %}
+{{ actividad7  }}
+{% elseif key == 'actividad8' %}
+{{ actividad8  }}
+{% elseif key == 'actividad9' %}
+{{ actividad9  }}
+{% elseif key == 'actividad10' %}
+{{ actividad10  }}
+{% elseif key == 'actividad11' %}
+{{ actividad11 }}
+{% elseif key == 'actividad12' %}
+{{ actividad12  }}
+{% elseif key == 'actividad13' %}
+{{ actividad13  }}
+{% elseif key == 'actividad14' %}
+{{ actividad14  }}
+{% elseif key == 'actividad15' %}
+{{ actividad15  }}
+{% elseif key == 'actividad16' %}
+{{ actividad16  }}
 {% endif %}
 {% endfor %}
 
-Actividad horario vespertino:{% for key,value in entity.actividadv if value %} {{ key |title}} {% endfor %}
+Actividad horario vespertino:
+{% for key,value in entity.actividadv if value %}
+{% if key == 'actividad1' %}
+{{ actividad1  }}
+{% elseif key == 'actividad2' %}
+{{ actividad2  }}
+{% elseif key == 'actividad3' %}
+{{ actividad3  }}
+{% elseif key == 'actividad4' %}
+{{ actividad4  }}
+{% elseif key == 'actividad5' %}
+{{ actividad5  }}
+{% elseif key == 'actividad6' %}
+{{ actividad6  }}
+{% elseif key == 'actividad7' %}
+{{ actividad7  }}
+{% elseif key == 'actividad8' %}
+{{ actividad8  }}
+{% elseif key == 'actividad9' %}
+{{ actividad9  }}
+{% elseif key == 'actividad10' %}
+{{ actividad10  }}
+{% elseif key == 'actividad11' %}
+{{ actividad11 }}
+{% elseif key == 'actividad12' %}
+{{ actividad12  }}
+{% elseif key == 'actividad13' %}
+{{ actividad13  }}
+{% elseif key == 'actividad14' %}
+{{ actividad14  }}
+{% elseif key == 'actividad15' %}
+{{ actividad15  }}
+{% elseif key == 'actividad16' %}
+{{ actividad16  }}
+{% endif %}
+{% endfor %}
+
 
 ¿Deseas comida vegetariana?: {% if entity.comida == true %} Si {% else %} No {% endif %}
 

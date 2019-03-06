@@ -21,12 +21,76 @@
             <p><strong>Nombre</strong>: <span class="label label-success">{{ registro.nombre|title }} {{ registro.paterno|title }} {{ registro.materno|title }}</span></p>
             <p><strong>Actividad horario matutino: </strong>
                 {% for key,value in registro.actividadm if value %}
-                    <span class="label label-success"> {{ key |title}}</span>
+                    {% if key == 'actividad1' %}
+                        <span class="label label-success">{{ actividad1 }}</span>
+                    {% elseif key == 'actividad2' %}
+                        <span class="label label-success">{{ actividad2 }}</span>
+                    {% elseif key == 'actividad3' %}
+                        <span class="label label-success">{{ actividad3  }}</span>
+                    {% elseif key == 'actividad4' %}
+                        <span class="label label-success">{{ actividad4  }}</span>
+                    {% elseif key == 'actividad5' %}
+                        <span class="label label-success">{{ actividad5  }}</span>
+                    {% elseif key == 'actividad6' %}
+                        <span class="label label-success">{{ actividad6  }}</span>
+                    {% elseif key == 'actividad7' %}
+                        <span class="label label-success">{{ actividad7  }}</span>
+                    {% elseif key == 'actividad8' %}
+                        <span class="label label-success">{{ actividad8 }}</span>
+                    {% elseif key == 'actividad9' %}
+                        <span class="label label-success">{{ actividad9 }}</span>
+                    {% elseif key == 'actividad10' %}
+                        <span class="label label-success">{{ actividad10 }}</span>
+                    {% elseif key == 'actividad11' %}
+                        <span class="label label-success">{{ actividad11 }}</span>
+                    {% elseif key == 'actividad12' %}
+                        <span class="label label-success">{{ actividad12 }}</span>
+                    {% elseif key == 'actividad13' %}
+                        <span class="label label-success">{{ actividad13 }}</span>
+                    {% elseif key == 'actividad14' %}
+                        <span class="label label-success">{{ actividad14 }}</span>
+                    {% elseif key == 'actividad15' %}
+                        <span class="label label-success">{{ actividad15 }}</span>
+                    {% elseif key == 'actividad16' %}
+                        <span class="label label-success">{{ actividad16 }}</span>
+                    {% endif %}
                 {% endfor %}
             </p>
             <p><strong>Actividad horario vespertino: </strong>
                 {% for key,value in registro.actividadv if value %}
-                    <span class="label label-success">{{ key |title}}</span>
+                    {% if key == 'actividad1' %}
+                        <span class="label label-success">{{ actividad1 }}</span>
+                    {% elseif key == 'actividad2' %}
+                        <span class="label label-success">{{ actividad2 }}</span>
+                    {% elseif key == 'actividad3' %}
+                        <span class="label label-success">{{ actividad3  }}</span>
+                    {% elseif key == 'actividad4' %}
+                        <span class="label label-success">{{ actividad4  }}</span>
+                    {% elseif key == 'actividad5' %}
+                        <span class="label label-success">{{ actividad5  }}</span>
+                    {% elseif key == 'actividad6' %}
+                        <span class="label label-success">{{ actividad6  }}</span>
+                    {% elseif key == 'actividad7' %}
+                        <span class="label label-success">{{ actividad7  }}</span>
+                    {% elseif key == 'actividad8' %}
+                        <span class="label label-success">{{ actividad8 }}</span>
+                    {% elseif key == 'actividad9' %}
+                        <span class="label label-success">{{ actividad9 }}</span>
+                    {% elseif key == 'actividad10' %}
+                        <span class="label label-success">{{ actividad10 }}</span>
+                    {% elseif key == 'actividad11' %}
+                        <span class="label label-success">{{ actividad11 }}</span>
+                    {% elseif key == 'actividad12' %}
+                        <span class="label label-success">{{ actividad12 }}</span>
+                    {% elseif key == 'actividad13' %}
+                        <span class="label label-success">{{ actividad13 }}</span>
+                    {% elseif key == 'actividad14' %}
+                        <span class="label label-success">{{ actividad14 }}</span>
+                    {% elseif key == 'actividad15' %}
+                        <span class="label label-success">{{ actividad15 }}</span>
+                    {% elseif key == 'actividad16' %}
+                        <span class="label label-success">{{ actividad16 }}</span>
+                    {% endif %}
                 {% endfor %}
             </p>
             <p><strong>¿Deseas comida vegetariana?:</strong>
