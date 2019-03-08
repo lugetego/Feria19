@@ -196,9 +196,9 @@ class RegistroController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($registro);
-            $em->flush();
+//            $em = $this->getDoctrine()->getManager();
+//            $em->persist($registro);
+//            $em->flush();
 
             // Obtiene correo y msg de la forma de contacto
             $mailer = $this->get('mailer');
@@ -210,7 +210,7 @@ class RegistroController extends Controller
                 ->setBcc(array('gerardo@matmor.unam.mx'))
                 ->setBody($this->renderView('registro/mail.txt.twig', array('entity' => $registro)))
             ;
-            $mailer->send($message);
+//            $mailer->send($message);
 
             //return $this->redirectToRoute('registro_show', array('id' => $registro->getId()));
 
